@@ -1,14 +1,21 @@
 ﻿using System;
-using Microsoft.AspNetCore.Identity;
+using System.Collections.Generic;
+using Jbet.Domain._Base;
 
 namespace Jbet.Domain.Entities
 {
-    public class User : IdentityUser<Guid>
+    public class User 
     {
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
 
         public DateTime RegistrationDate { get; set; }
+
+        // References
+
+        public virtual ICollection<Comment> Comments { get; set; }
+
+        public virtual ICollection<UserMatchBet> UserMatchesBets { get; set; }
     }
 }
