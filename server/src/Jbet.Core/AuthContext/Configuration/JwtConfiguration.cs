@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.IdentityModel.Tokens;
+using System;
 
 namespace Jbet.Core.AuthContext.Configuration
 {
@@ -32,6 +33,6 @@ namespace Jbet.Core.AuthContext.Configuration
         /// <summary>
         /// Gets or sets the signing key to use when generating tokens.
         /// </summary>
-        //public SigningCredentials SigningCredentials { get; set; }
+        public SigningCredentials SigningCredentials { get; set; }
     }
 }
