@@ -13,7 +13,6 @@ namespace Jbet.Domain.Entities
         public DateTime Start { get; set; }
 
         // References
-
         public Guid HomeTeamId { get; set; }
 
         public virtual Team HomeTeam { get; set; }

@@ -14,7 +14,6 @@ namespace Jbet.Domain.Entities
         public decimal AwayBet { get; set; }
 
         // References
-
         public Guid UserId { get; set; }
 
         public virtual User User { get; set; }

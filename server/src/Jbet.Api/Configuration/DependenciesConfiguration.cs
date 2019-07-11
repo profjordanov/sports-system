@@ -30,6 +30,5 @@ namespace Jbet.Api.Configuration
             services.AddIdentity<User, IdentityRole<Guid>>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
         }
-
     }
 }

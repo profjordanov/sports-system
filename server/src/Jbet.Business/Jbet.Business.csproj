@@ -11,7 +11,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.1.1" />
+    <PackageReference Include="FluentValidation" Version="8.4.0" />
+    <PackageReference Include="Marten" Version="3.6.1" />
+    <PackageReference Include="Optional" Version="4.0.0" />
+    <PackageReference Include="Optional.Async" Version="1.3.0" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Jbet.Core\Jbet.Core.csproj" />
+    <ProjectReference Include="..\Jbet.Domain\Jbet.Domain.csproj" />
   </ItemGroup>
 
 </Project>
