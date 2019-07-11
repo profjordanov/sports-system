@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jbet.Api", "src\Jbet.Api\Jbet.Api.csproj", "{C888BFF4-A96D-470B-A7A6-802A6C21C732}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jbet.Api", "src\Jbet.Api\Jbet.Api.csproj", "{C888BFF4-A96D-470B-A7A6-802A6C21C732}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2523645C-9DDF-46FA-BDA2-586E5510BE2C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +20,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C888BFF4-A96D-470B-A7A6-802A6C21C732} = {2523645C-9DDF-46FA-BDA2-586E5510BE2C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9561C21E-7212-45C8-8088-99B1984F4F94}
