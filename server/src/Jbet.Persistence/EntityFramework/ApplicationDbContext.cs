@@ -27,9 +27,13 @@ namespace Jbet.Persistence.EntityFramework
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.ConfigureGuidPrimaryKeys();
+            builder.ConfigureUserCommentsRelations();
+            builder.ConfigureMatchCommentsRelations();
+            builder.ConfigureTeamMatchRelations();
+            builder.ConfigureTeamPlayerRelations();
+
             base.OnModelCreating(builder);
-
-
         }
     }
 }
