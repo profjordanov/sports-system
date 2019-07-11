@@ -14,7 +14,6 @@ namespace Jbet.Domain.Entities
         public DateTime CreatedOn { get; set; }
 
         // References
-
         public Guid MatchId { get; set; }
 
         public virtual Match Match { get; set; }

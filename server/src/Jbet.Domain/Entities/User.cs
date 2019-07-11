@@ -14,12 +14,10 @@ namespace Jbet.Domain.Entities
         public DateTime RegistrationDate { get; set; }
 
         // References
-
         public virtual ICollection<Comment> Comments { get; set; }
 
         public virtual ICollection<UserMatchBet> UserMatchBets { get; set; }
 
         public virtual ICollection<Vote> UserTeamVotes { get; set; }
-
     }
 }

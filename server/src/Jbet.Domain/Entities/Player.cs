@@ -16,10 +16,8 @@ namespace Jbet.Domain.Entities
         public double Height { get; set; }
 
         // References
-
         public Guid? TeamId { get; set; }
 
         public virtual Team Team { get; set; }
-
     }
 }

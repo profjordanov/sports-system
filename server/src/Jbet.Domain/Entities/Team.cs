@@ -19,7 +19,6 @@ namespace Jbet.Domain.Entities
         public string Website { get; set; }
 
         // References
-
         public virtual ICollection<Player> Players { get; set; }
 
         public virtual ICollection<Match> AwayMatches { get; set; }
