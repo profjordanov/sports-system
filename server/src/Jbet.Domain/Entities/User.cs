@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using Jbet.Domain._Base;
+using Microsoft.AspNetCore.Identity;
 
 namespace Jbet.Domain.Entities
 {
-    public class User 
+    public class User : IdentityUser<Guid>, IAggregate
     {
         public string FirstName { get; set; }
 
