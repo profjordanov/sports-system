@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jbet.Api", "src\Jbet.Api\Jb
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2523645C-9DDF-46FA-BDA2-586E5510BE2C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jbet.Business", "Jbet.Business\Jbet.Business.csproj", "{557E6BC8-B02F-4034-8FD2-319D87233A24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +19,17 @@ Global
 		{C888BFF4-A96D-470B-A7A6-802A6C21C732}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C888BFF4-A96D-470B-A7A6-802A6C21C732}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C888BFF4-A96D-470B-A7A6-802A6C21C732}.Release|Any CPU.Build.0 = Release|Any CPU
+		{557E6BC8-B02F-4034-8FD2-319D87233A24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{557E6BC8-B02F-4034-8FD2-319D87233A24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{557E6BC8-B02F-4034-8FD2-319D87233A24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{557E6BC8-B02F-4034-8FD2-319D87233A24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C888BFF4-A96D-470B-A7A6-802A6C21C732} = {2523645C-9DDF-46FA-BDA2-586E5510BE2C}
+		{557E6BC8-B02F-4034-8FD2-319D87233A24} = {2523645C-9DDF-46FA-BDA2-586E5510BE2C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9561C21E-7212-45C8-8088-99B1984F4F94}
