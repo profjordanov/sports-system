@@ -1,11 +1,11 @@
-﻿using System;
-using Jbet.Domain.Entities;
+﻿using Jbet.Domain.Entities;
 using Jbet.Persistence.EntityFramework;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace Jbet.Api.Configuration
 {

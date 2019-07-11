@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Jbet.Domain._Base;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Jbet.Domain._Base;
 
 namespace Jbet.Domain.Entities
 {

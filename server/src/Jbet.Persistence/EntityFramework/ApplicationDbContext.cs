@@ -1,8 +1,8 @@
-﻿using System;
-using Jbet.Domain.Entities;
+﻿using Jbet.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace Jbet.Persistence.EntityFramework
 {

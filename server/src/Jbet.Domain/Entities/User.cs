@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using Jbet.Domain._Base;
+﻿using Jbet.Domain._Base;
 using Microsoft.AspNetCore.Identity;
+using System;
+using System.Collections.Generic;
 
 namespace Jbet.Domain.Entities
 {
