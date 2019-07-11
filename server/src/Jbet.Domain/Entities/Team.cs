@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using Jbet.Domain._Base;
 
 namespace Jbet.Domain.Entities
 {
     public class Team : IAggregate
     {
+        [Key]
         public Guid Id { get; set; }
 
         public string Name { get; set; }

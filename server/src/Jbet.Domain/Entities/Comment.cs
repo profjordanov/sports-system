@@ -1,10 +1,13 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using Jbet.Domain._Base;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Jbet.Domain.Entities
 {
     public class Comment : IAggregate
     {
+        [Key]
         public Guid Id { get; set; }
 
         public string Content { get; set; }

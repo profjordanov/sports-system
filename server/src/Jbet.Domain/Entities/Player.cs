@@ -1,10 +1,12 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using Jbet.Domain._Base;
 
 namespace Jbet.Domain.Entities
 {
     public class Player : IAggregate
     {
+        [Key]
         public Guid Id { get; set; }
 
         public string FullName { get; set; }
