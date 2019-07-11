@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Jbet.Business\Jbet.Business.csproj" />
     <ProjectReference Include="..\Jbet.Core\Jbet.Core.csproj" />
     <ProjectReference Include="..\Jbet.Persistence\Jbet.Persistence.csproj" />
   </ItemGroup>
