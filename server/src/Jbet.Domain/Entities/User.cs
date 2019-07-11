@@ -17,6 +17,9 @@ namespace Jbet.Domain.Entities
 
         public virtual ICollection<Comment> Comments { get; set; }
 
-        public virtual ICollection<UserMatchBet> UserMatchesBets { get; set; }
+        public virtual ICollection<UserMatchBet> UserMatchBets { get; set; }
+
+        public virtual ICollection<Vote> UserTeamVotes { get; set; }
+
     }
 }

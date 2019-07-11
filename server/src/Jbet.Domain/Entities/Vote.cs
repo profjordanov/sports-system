@@ -9,6 +9,7 @@ namespace Jbet.Domain.Entities
         [Key]
         public Guid Id { get; set; }
 
+        [Range(1,10)]
         public int Value { get; set; }
 
         // References

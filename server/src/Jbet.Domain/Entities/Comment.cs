@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using Jbet.Domain._Base;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Jbet.Domain.Entities
 {

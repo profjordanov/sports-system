@@ -10,6 +10,12 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="2.2.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Jbet.Core\Jbet.Core.csproj" />
+    <ProjectReference Include="..\Jbet.Persistence\Jbet.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

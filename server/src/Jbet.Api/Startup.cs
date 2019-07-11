@@ -10,6 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Jbet.Api.Configuration;
+using Jbet.Core.AuthContext;
+using Jbet.Core.AuthContext.Configuration;
 
 namespace Jbet.Api
 {
@@ -22,9 +25,19 @@ namespace Jbet.Api
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        // This method gets called by the runtime.
+        // Adds services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext(Configuration.GetConnectionString("DefaultConnection"));
+
+            services.AddJwtIdentity(
+                Configuration.GetSection(nameof(JwtConfiguration)),
+                options =>
+                {
+                    options.AddPolicy(AuthConstants.Policies.IsAdmin, pb => pb.RequireClaim(AuthConstants.ClaimTypes.IsAdmin));
+                });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
