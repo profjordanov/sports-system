@@ -21,7 +21,10 @@
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="2.2.4" />
     <PackageReference Include="Optional" Version="4.0.0" />
     <PackageReference Include="RiskFirst.Hateoas" Version="3.1.1" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="2.0.4" />
+    <PackageReference Include="Serilog.Extensions.Logging.File" Version="2.0.0-dev-00032" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="4.0.1" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.5.0" />
   </ItemGroup>
 
