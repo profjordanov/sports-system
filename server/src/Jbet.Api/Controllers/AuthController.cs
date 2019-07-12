@@ -18,6 +18,7 @@ namespace Jbet.Api.Controllers
     /// <summary>
     /// A controller responsible for users and JWT token. 
     /// </summary>
+    [Route("api/[controller]")]
     public class AuthController : ApiController
     {
         /// <inheritdoc />
