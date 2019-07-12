@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using FluentValidation;
 using Jbet.Core.AuthContext.Commands;
 using Jbet.Domain;
@@ -9,6 +8,7 @@ using Jbet.Domain.Repositories;
 using MediatR;
 using Optional;
 using Optional.Async.Extensions;
+using System.Threading.Tasks;
 
 namespace Jbet.Business.AuthContext.CommandHandlers
 {
