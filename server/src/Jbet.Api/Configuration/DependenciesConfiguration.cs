@@ -20,6 +20,7 @@ using Jbet.Core.AuthContext.Configuration;
 using Jbet.Domain.Events.Base;
 using Jbet.Domain.Repositories;
 using Jbet.Persistence.Repositories;
+using Marten;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using RiskFirst.Hateoas;
@@ -205,6 +206,25 @@ namespace Jbet.Api.Configuration
                     config.AddPolicy(policy.PolicyConfiguration);
                 }
             });
+        }
+
+        public static void AddMarten(this IServiceCollection services, IConfiguration configuration)
+        {
+            var documentStore = DocumentStore.For(options =>
+            {
+                var config = configuration.GetSection("EventStore");
+                var connectionString = config.GetValue<string>("ConnectionString");
+                var schemaName = config.GetValue<string>("Schema");
+
+                options.Connection(connectionString);
+                options.AutoCreateSchemaObjects = AutoCreate.All;
+                options.Events.DatabaseSchemaName = schemaName;
+                options.DatabaseSchemaName = schemaName;
+            });
+
+            services.AddSingleton<IDocumentStore>(documentStore);
+
+            services.AddScoped(sp => sp.GetService<IDocumentStore>().OpenSession());
         }
     }
 }

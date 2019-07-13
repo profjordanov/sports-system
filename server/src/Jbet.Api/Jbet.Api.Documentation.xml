@@ -1,0 +1,36 @@
+﻿<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>Cafe.Api</name>
+  </assembly>
+  <members>
+    <member name="M:Cafe.Api.Controllers.AuthController.GetCurrentUser">
+      <summary>
+        Retrieves the currently logged in user.
+      </summary>
+    </member>
+    <member name="M:Cafe.Api.Controllers.AuthController.Login(Cafe.Core.AuthContext.Commands.Login)">
+      <summary>
+        Login.
+      </summary>
+      <param name="command">The credentials.</param>
+      <returns>A JWT.</returns>
+      <response code="200">If the credentials have a match.</response>
+      <response code="400">If the credentials don't match/don't meet the requirements.</response>
+    </member>
+    <member name="M:Cafe.Api.Controllers.AuthController.Logout">
+      <summary>
+        Logout. (unsets the auth cookie)
+      </summary>
+    </member>
+    <member name="M:Cafe.Api.Controllers.AuthController.Register(Cafe.Core.AuthContext.Commands.Register)">
+      <summary>
+        Register.
+      </summary>
+      <param name="command">The user model.</param>
+      <returns>A user model.</returns>
+      <response code="201">A user was created.</response>
+      <response code="400">Invalid input.</response>
+    </member>
+  </members>
+</doc>
