@@ -34,6 +34,7 @@ namespace Jbet.Api.Filters
                 {
                     Console.WriteLine(e);
                     _dbContext.ChangeTracker.Entries().ToList().ForEach(x => x.Reload());
+
                     transaction.Rollback();
                     throw;
                 }
