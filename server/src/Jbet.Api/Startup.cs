@@ -65,6 +65,11 @@ namespace Jbet.Api
             {
                 options.Filters.Add<ExceptionFilter>();
                 options.Filters.Add<ModelStateFilter>();
+
+                options.Filters.Add(new EntityFrameworkTransactionFilter(
+                    services
+                        .BuildServiceProvider()
+                        .GetService<ApplicationDbContext>()));
             })
             .AddFluentValidation(fv =>
             {
