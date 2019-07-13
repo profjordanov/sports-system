@@ -13,7 +13,7 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="8.1.1" />
     <PackageReference Include="FluentValidation" Version="8.4.0" />
-    <PackageReference Include="MediatR" Version="7.0.0" />
+    <PackageReference Include="MediatR" Version="6.0.0" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="5.5.0" />
     <PackageReference Include="Optional" Version="4.0.0" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" />

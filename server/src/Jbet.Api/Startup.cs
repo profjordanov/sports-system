@@ -30,8 +30,9 @@ namespace Jbet.Api
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime.
-        // Adds services to the container.
+        /// <summary>
+        /// This method gets called by the runtime. Adds services to the container.
+        /// </summary>
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext(Configuration.GetConnectionString("DefaultConnection"));
@@ -55,10 +56,9 @@ namespace Jbet.Api
 
             services.AddLogging(logBuilder => logBuilder.AddSerilog(dispose: true));
 
+            services.AddMarten(Configuration);
             services.AddCqrs();
-
-            services.AddMediatR(typeof(BaseAuthHandler<>));
-
+            services.AddMediatR();
             services.AddRepositories();
 
             services.AddMvc(options =>
