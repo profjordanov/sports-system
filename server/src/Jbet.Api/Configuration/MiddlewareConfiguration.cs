@@ -22,7 +22,7 @@ namespace Jbet.Api.Configuration
         internal static void AddLogging(this ILoggerFactory loggerFactory, IConfigurationSection loggingConfiguration)
         {
             loggerFactory.AddConsole(loggingConfiguration);
-            loggerFactory.AddFile("logs/jbet-api-{Date}.log");
+            loggerFactory.AddFile("Logs/jbet-api-{Date}.log");
             loggerFactory.AddDebug();
         }
 
