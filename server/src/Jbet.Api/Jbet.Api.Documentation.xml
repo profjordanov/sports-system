@@ -1,36 +1,111 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <doc>
-  <assembly>
-    <name>Jbet.Api</name>
-  </assembly>
-  <members>
-    <member name="M:Jbet.Api.Controllers.AuthController.GetCurrentUser">
-      <summary>
-        Retrieves the currently logged in user.
-      </summary>
-    </member>
-    <member name="M:Jbet.Api.Controllers.AuthController.Login(Jbet.Core.AuthContext.Commands.Login)">
-      <summary>
-        Login.
-      </summary>
-      <param name="command">The credentials.</param>
-      <returns>A JWT.</returns>
-      <response code="200">If the credentials have a match.</response>
-      <response code="400">If the credentials don't match/don't meet the requirements.</response>
-    </member>
-    <member name="M:Jbet.Api.Controllers.AuthController.Logout">
-      <summary>
-        Logout. (unsets the auth cookie)
-      </summary>
-    </member>
-    <member name="M:Jbet.Api.Controllers.AuthController.Register(Jbet.Core.AuthContext.Commands.Register)">
-      <summary>
-        Register.
-      </summary>
-      <param name="command">The user model.</param>
-      <returns>A user model.</returns>
-      <response code="201">A user was created.</response>
-      <response code="400">Invalid input.</response>
-    </member>
-  </members>
+    <assembly>
+        <name>Jbet.Api</name>
+    </assembly>
+    <members>
+        <member name="T:Jbet.Api.Controllers.ApiController">
+            <inheritdoc />
+            <summary>
+            Base controller.
+            </summary>
+        </member>
+        <member name="T:Jbet.Api.Controllers.AuthController">
+            <inheritdoc />
+            <summary>
+            A controller responsible for users and JWT token. 
+            </summary>
+        </member>
+        <member name="M:Jbet.Api.Controllers.AuthController.#ctor(MediatR.IMediator,Jbet.Api.Hateoas.Resources.Base.IResourceMapper)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jbet.Api.Controllers.AuthController.GetCurrentUser">
+            <summary>
+            Retrieves the currently logged in user.
+            </summary>
+        </member>
+        <member name="M:Jbet.Api.Controllers.AuthController.Register(Jbet.Core.AuthContext.Commands.Register)">
+            <summary>
+            Register.
+            </summary>
+            <param name="command">The user model.</param>
+            <returns>A user model.</returns>
+            <response code="201">A user was created.</response>
+            <response code="400">Invalid input.</response>
+        </member>
+        <member name="M:Jbet.Api.Controllers.AuthController.Login(Jbet.Core.AuthContext.Commands.Login)">
+            <summary>
+            Login.
+            </summary>
+            <param name="command">The credentials.</param>
+            <returns>A JWT.</returns>
+            <response code="200">If the credentials have a match.</response>
+            <response code="400">If the credentials don't match/don't meet the requirements.</response>
+        </member>
+        <member name="M:Jbet.Api.Controllers.AuthController.Logout">
+            <summary>
+            Logout. (unsets the auth cookie)
+            </summary>
+        </member>
+        <member name="T:Jbet.Api.Controllers.HomeController">
+            <inheritdoc />
+            <summary>
+            A controller responsible for the home page of the application.
+            </summary>
+        </member>
+        <member name="M:Jbet.Api.Controllers.HomeController.#ctor(MediatR.IMediator,Jbet.Api.Hateoas.Resources.Base.IResourceMapper)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jbet.Api.Controllers.HomeController.ApiHome">
+            <summary>
+            The root of the API.
+            </summary>
+            <returns>
+            Top 3 matches (having most bets) and best 3 teams (most voted).
+            </returns>
+            <response code="200"></response>
+        </member>
+        <member name="T:Jbet.Api.Filters.EntityFrameworkTransactionFilter">
+            <inheritdoc />
+            <summary>
+            Starts an Entity Framework transaction before each action and commits it afterwards.
+            </summary>
+        </member>
+        <member name="M:Jbet.Api.Filters.EntityFrameworkTransactionFilter.OnActionExecutionAsync(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext,Microsoft.AspNetCore.Mvc.Filters.ActionExecutionDelegate)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jbet.Api.Program.BuildWebHost(System.String[])">
+            <summary>
+            To be used by EF tooling until I implement IDesignTimeDbContextFactory.
+            https://wildermuth.com/2017/07/06/Program-cs-in-ASP-NET-Core-2-0
+            </summary>
+        </member>
+        <member name="M:Jbet.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Adds services to the container.
+            </summary>
+        </member>
+        <member name="M:Jbet.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment,Microsoft.Extensions.Logging.ILoggerFactory,Microsoft.AspNetCore.Identity.UserManager{Jbet.Domain.Entities.User},Jbet.Persistence.EntityFramework.ApplicationDbContext,Jbet.Api.Configuration.DatabaseSeeder)">
+            <summary>
+            This method gets called by the runtime.
+            Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app">
+            Provides the mechanisms to configure an application's request pipeline.
+            </param>
+            <param name="env">
+            Provides information about the web hosting environment an application is running in.
+            </param>
+            <param name="loggerFactory">
+            Represents a type used to configure the logging system
+            and create instances of ILogger from the registered ILoggerProviders.
+            </param>
+            <param name="userManager">
+            Managing user in a persistence store.
+            </param>
+            <param name="dbContext">
+            Application class for the Entity Framework database context used for identity.
+            </param>
+        </member>
+    </members>
 </doc>
