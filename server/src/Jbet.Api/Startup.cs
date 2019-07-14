@@ -56,6 +56,8 @@ namespace Jbet.Api
 
             services.AddLogging(logBuilder => logBuilder.AddSerilog(dispose: true));
 
+            services.AddTransient<DatabaseSeeder>();
+
             services.AddMarten(Configuration);
             services.AddCqrs();
             services.AddMediatR();
@@ -78,25 +80,56 @@ namespace Jbet.Api
             .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// <summary>
+        /// This method gets called by the runtime.
+        /// Use this method to configure the HTTP request pipeline.
+        /// </summary>
+        /// <param name="app">
+        /// Provides the mechanisms to configure an application's request pipeline.
+        /// </param>
+        /// <param name="env">
+        /// Provides information about the web hosting environment an application is running in.
+        /// </param>
+        /// <param name="loggerFactory">
+        /// Represents a type used to configure the logging system
+        /// and create instances of ILogger from the registered ILoggerProviders.
+        /// </param>
+        /// <param name="userManager">
+        /// Managing user in a persistence store.
+        /// </param>
+        /// <param name="dbContext">
+        /// Application class for the Entity Framework database context used for identity.
+        /// </param>
         public void Configure(
             IApplicationBuilder app,
             IHostingEnvironment env,
             ILoggerFactory loggerFactory,
             UserManager<User> userManager,
-            ApplicationDbContext dbContext)
+            ApplicationDbContext dbContext,
+            DatabaseSeeder seeder)
         {
-            if (env.IsDevelopment())
+            // ensure data stores
+            dbContext.Database.EnsureCreated();
+            DatabaseConfiguration.EnsureEventStoreIsCreated(Configuration);
+
+            if (!env.IsEnvironment(Environment.IntegrationTests))
             {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                DatabaseConfiguration.AddDefaultAdminAccountIfNoneExisting(userManager, Configuration).Wait();
+                seeder.SeedDatabase().Wait();
             }
 
-            app.UseHttpsRedirection();
+            if (!env.IsDevelopment())
+            {
+                app.UseHsts();
+                app.UseHttpsRedirection();
+            }
+
+            app.UseCors(builder => builder
+                .SetIsOriginAllowedToAllowWildcardSubdomains()
+                .WithOrigins("http://localhost:3000", "https://jbet.net")
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials());
 
             loggerFactory.AddLogging(Configuration.GetSection("Logging"));
 
@@ -104,6 +137,8 @@ namespace Jbet.Api
 
             app.UseStaticFiles();
             app.UseAuthentication();
+
+            // soon app.UseSignalR
 
             app.UseMvc();
         }
