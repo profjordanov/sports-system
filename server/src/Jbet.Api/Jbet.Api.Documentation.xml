@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0"?>
 <doc>
   <assembly>
-    <name>Cafe.Api</name>
+    <name>Jbet.Api</name>
   </assembly>
   <members>
-    <member name="M:Cafe.Api.Controllers.AuthController.GetCurrentUser">
+    <member name="M:Jbet.Api.Controllers.AuthController.GetCurrentUser">
       <summary>
         Retrieves the currently logged in user.
       </summary>
     </member>
-    <member name="M:Cafe.Api.Controllers.AuthController.Login(Cafe.Core.AuthContext.Commands.Login)">
+    <member name="M:Jbet.Api.Controllers.AuthController.Login(Jbet.Core.AuthContext.Commands.Login)">
       <summary>
         Login.
       </summary>
@@ -18,12 +18,12 @@
       <response code="200">If the credentials have a match.</response>
       <response code="400">If the credentials don't match/don't meet the requirements.</response>
     </member>
-    <member name="M:Cafe.Api.Controllers.AuthController.Logout">
+    <member name="M:Jbet.Api.Controllers.AuthController.Logout">
       <summary>
         Logout. (unsets the auth cookie)
       </summary>
     </member>
-    <member name="M:Cafe.Api.Controllers.AuthController.Register(Cafe.Core.AuthContext.Commands.Register)">
+    <member name="M:Jbet.Api.Controllers.AuthController.Register(Jbet.Core.AuthContext.Commands.Register)">
       <summary>
         Register.
       </summary>
