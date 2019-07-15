@@ -1,4 +1,5 @@
-﻿using Jbet.Api.Hateoas.Resources.Base;
+﻿using System;
+using Jbet.Api.Hateoas.Resources.Base;
 using Jbet.Api.Hateoas.Resources.Match;
 using Jbet.Core.MatchContext.Queries;
 using Jbet.Domain.Views.Match;
@@ -8,6 +9,11 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
+using Jbet.Api.Hateoas.Resources.Team;
+using Jbet.Core.TeamContext.Queries;
+using Jbet.Domain;
+using Jbet.Domain.Views.Team;
+using Optional.Async.Extensions;
 
 namespace Jbet.Api.Controllers
 {
@@ -34,5 +40,18 @@ namespace Jbet.Api.Controllers
         [ProducesResponseType(typeof(IEnumerable<MatchResource>), (int)HttpStatusCode.OK)]
         public Task<IActionResult> Index([FromQuery] GetAllMatches query) =>
             ResourceContainerResult<MatchView, MatchResource, MatchContainerResource>(query);
+
+        /// <summary>
+        /// Retrieves information about the team and its players.
+        /// </summary>
+        /// <response code="200">The team was found.</response>
+        /// <response code="404">The team was not found.</response>
+        [HttpGet("{id}", Name = nameof(MatchDetails))]
+        [ProducesResponseType(typeof(MatchDetailsResource), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(Error), (int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> MatchDetails([FromRoute] Guid id) =>
+            (await Mediator.Send(new GetMatchDetails(id))
+                .MapAsync(ToResourceAsync<MatchDetailsView, MatchDetailsResource>))
+            .Match(Ok, Error);
     }
 }

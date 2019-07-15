@@ -22,6 +22,10 @@ namespace Jbet.Persistence.Repositories
         public Task<Match> GetByIdAsync(Guid id) =>
             _dbContext
                 .Matches
+                .Include(match => match.HomeTeam)
+                .Include(match => match.AwayTeam)
+                .Include(match => match.UserMatchBets)
+                .Include(match => match.Comments)
                 .FirstOrDefaultAsync(match => match.Id == id);
 
         public IAsyncEnumerable<Match> TopTreeMatchesByBetsAsync() =>
