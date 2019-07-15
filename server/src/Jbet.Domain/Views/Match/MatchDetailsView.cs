@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Jbet.Domain.Views.Comment;
+using System;
 using System.Collections.Generic;
-using Jbet.Domain.Views.Comment;
 
 namespace Jbet.Domain.Views.Match
 {
@@ -8,11 +8,11 @@ namespace Jbet.Domain.Views.Match
     {
         public Guid Id { get; set; }
 
-        public int HomeTeamId { get; set; }
+        public Guid HomeTeamId { get; set; }
 
         public string HomeTeamName { get; set; }
 
-        public int AwayTeamId { get; set; }
+        public Guid AwayTeamId { get; set; }
 
         public string AwayTeamName { get; set; }
 

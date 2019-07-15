@@ -9,11 +9,11 @@ namespace Jbet.Api.Hateoas.Resources.Match
     {
         public Guid Id { get; set; }
 
-        public int HomeTeamId { get; set; }
+        public Guid HomeTeamId { get; set; }
 
         public string HomeTeamName { get; set; }
 
-        public int AwayTeamId { get; set; }
+        public Guid AwayTeamId { get; set; }
 
         public string AwayTeamName { get; set; }
 

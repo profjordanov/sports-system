@@ -27,10 +27,10 @@ namespace Jbet.Api.Controllers
         /// </summary>
         /// <response code="200">The team was found.</response>
         /// <response code="404">The team was not found.</response>
-        [HttpGet("{id}", Name = nameof(Details))]
+        [HttpGet("{id}", Name = nameof(TeamDetails))]
         [ProducesResponseType(typeof(TeamDetailsResource), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(Error), (int)HttpStatusCode.NotFound)]
-        public async Task<IActionResult> Details([FromRoute] Guid id) =>
+        public async Task<IActionResult> TeamDetails([FromRoute] Guid id) =>
             (await Mediator.Send(new GetTeamDetails(id, CurrentUserId))
                 .MapAsync(ToResourceAsync<TeamDetailsView, TeamDetailsResource>))
                 .Match(Ok, Error);
