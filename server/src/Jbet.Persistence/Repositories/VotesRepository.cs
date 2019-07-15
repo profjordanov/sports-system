@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
+using Jbet.Domain.Entities;
 using Jbet.Domain.Repositories;
 using Jbet.Persistence.EntityFramework;
 using Microsoft.EntityFrameworkCore;
@@ -20,5 +22,23 @@ namespace Jbet.Persistence.Repositories
                 .Votes
                 .AnyAsync(vote => vote.TeamId == teamId &&
                                   vote.UserId == userId);
+
+        public async Task<Vote> AddAsync(
+            Guid teamId,
+            Guid userId,
+            CancellationToken cancellationToken)
+        {
+            var entity = new Vote
+            {
+                Id = Guid.NewGuid(),
+                TeamId = teamId,
+                UserId = userId
+            };
+
+            await _dbContext.Votes.AddAsync(entity, cancellationToken);
+            await _dbContext.SaveChangesAsync(cancellationToken);
+
+            return entity;
+        }
     }
 }
