@@ -90,6 +90,11 @@
             <response code="200">The team was found.</response>
             <response code="404">The team was not found.</response>
         </member>
+        <member name="T:Jbet.Api.Controllers.VotesController">
+            <summary>
+            A controller responsible for votes data.
+            </summary>
+        </member>
         <member name="T:Jbet.Api.Filters.EntityFrameworkTransactionFilter">
             <inheritdoc />
             <summary>

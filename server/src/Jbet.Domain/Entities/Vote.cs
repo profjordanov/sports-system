@@ -1,6 +1,7 @@
 ﻿using Jbet.Domain._Base;
 using System;
 using System.ComponentModel.DataAnnotations;
+using Jbet.Domain.Events.Votes;
 
 namespace Jbet.Domain.Entities
 {
@@ -20,5 +21,22 @@ namespace Jbet.Domain.Entities
         public Guid UserId { get; set; }
 
         public virtual User User { get; set; }
+
+        // Events
+        public UserVotedForTeam VoteForTeam(Guid teamId, Guid userId) =>
+            new UserVotedForTeam
+            {
+                VoteId = Id,
+                TeamId = teamId,
+                UserId = userId
+            };
+
+        public void Apply(UserVotedForTeam @event)
+        {
+            Id = @event.VoteId;
+            TeamId = @event.TeamId;
+            UserId = @event.UserId;
+            Value = @event.Value;
+        }
     }
 }
