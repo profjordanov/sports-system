@@ -72,11 +72,23 @@
         </member>
         <member name="M:Jbet.Api.Controllers.MatchesController.Index(Jbet.Core.MatchContext.Queries.GetAllMatches)">
             <summary>
-            Shows all matches by paging.
+            Display the matches, ordered by date with paging.
             </summary>
             <param name="query"></param>
             <returns>A collection of <see cref="T:Jbet.Domain.Views.Match.MatchView"/></returns>
             <response code="200"></response>
+        </member>
+        <member name="T:Jbet.Api.Controllers.TeamsController">
+            <summary>
+            A controller responsible for teams data.
+            </summary>
+        </member>
+        <member name="M:Jbet.Api.Controllers.TeamsController.Details(System.Guid)">
+            <summary>
+            Retrieves information about the team and its players.
+            </summary>
+            <response code="200">The team was found.</response>
+            <response code="404">The team was not found.</response>
         </member>
         <member name="T:Jbet.Api.Filters.EntityFrameworkTransactionFilter">
             <inheritdoc />
