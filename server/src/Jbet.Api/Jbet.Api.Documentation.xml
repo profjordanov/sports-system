@@ -95,6 +95,13 @@
             A controller responsible for votes data.
             </summary>
         </member>
+        <member name="M:Jbet.Api.Controllers.VotesController.Vote(Jbet.Core.VoteContext.HttpRequests.VoteInput)">
+            <summary>
+            Logged-in user votes for a team (no more than once).
+            </summary>
+            <response code="201">A vote was created.</response>
+            <response code="409">User already voted.</response>
+        </member>
         <member name="T:Jbet.Api.Filters.EntityFrameworkTransactionFilter">
             <inheritdoc />
             <summary>
