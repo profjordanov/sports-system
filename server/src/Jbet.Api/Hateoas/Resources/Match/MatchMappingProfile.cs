@@ -8,6 +8,7 @@ namespace Jbet.Api.Hateoas.Resources.Match
         public MatchMappingProfile()
         {
             CreateMap<MatchView, MatchResource>(MemberList.Destination);
+            CreateMap<MatchDetailsView, MatchDetailsResource>(MemberList.Destination);
         }
     }
 }
