@@ -1,6 +1,7 @@
 ﻿using Jbet.Domain._Base;
 using System;
 using System.ComponentModel.DataAnnotations;
+using Jbet.Domain.Events.Comments;
 
 namespace Jbet.Domain.Entities
 {
@@ -21,5 +22,28 @@ namespace Jbet.Domain.Entities
         public Guid UserId { get; set; }
 
         public virtual User User { get; set; }
+
+        // Events
+        public UserCommentedMatch CommentMatch(
+            string content,
+            DateTime createdOn,
+            Guid matchId,
+            Guid userId) => new UserCommentedMatch
+        {
+            CommentId = Id,
+            Content = content,
+            UserId = userId,
+            MatchId = matchId,
+            CreatedOn = createdOn
+        };
+
+        public void Apply(UserCommentedMatch @event)
+        {
+            Id = @event.CommentId;
+            Content = @event.Content;
+            CreatedOn = @event.CreatedOn;
+            MatchId = @event.MatchId;
+            UserId = @event.UserId;
+        }
     }
 }
