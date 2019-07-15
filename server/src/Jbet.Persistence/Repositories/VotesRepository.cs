@@ -1,10 +1,10 @@
-﻿using System;
-using System.Threading;
-using System.Threading.Tasks;
-using Jbet.Domain.Entities;
+﻿using Jbet.Domain.Entities;
 using Jbet.Domain.Repositories;
 using Jbet.Persistence.EntityFramework;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Jbet.Persistence.Repositories
 {
@@ -32,7 +32,8 @@ namespace Jbet.Persistence.Repositories
             {
                 Id = Guid.NewGuid(),
                 TeamId = teamId,
-                UserId = userId
+                UserId = userId,
+                Value = 1
             };
 
             await _dbContext.Votes.AddAsync(entity, cancellationToken);
