@@ -42,10 +42,10 @@ namespace Jbet.Api.Controllers
             ResourceContainerResult<MatchView, MatchResource, MatchContainerResource>(query);
 
         /// <summary>
-        /// Retrieves information about the team and its players.
+        /// Logged-in users can view match details (home team, away team, date and comments).
         /// </summary>
-        /// <response code="200">The team was found.</response>
-        /// <response code="404">The team was not found.</response>
+        /// <response code="200">The match was found.</response>
+        /// <response code="404">The match was not found.</response>
         [HttpGet("{id}", Name = nameof(MatchDetails))]
         [ProducesResponseType(typeof(MatchDetailsResource), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(Error), (int)HttpStatusCode.NotFound)]
