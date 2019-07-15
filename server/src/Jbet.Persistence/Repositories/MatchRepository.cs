@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using Jbet.Domain.Entities;
+﻿using Jbet.Domain.Entities;
 using Jbet.Domain.Repositories;
 using Jbet.Persistence.EntityFramework;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Jbet.Persistence.Repositories
 {
@@ -28,5 +28,19 @@ namespace Jbet.Persistence.Repositories
                     match.UserMatchBets.Sum(bet => bet.AwayBet) + match.UserMatchBets.Sum(bet => bet.HomeBet))
                 .Take(3)
                 .ToAsyncEnumerable();
+
+        public Task<List<Match>> GetPagedListAsync(
+            CancellationToken cancellationToken,
+            int page = 0,
+            int pageSize = 20) =>
+            _dbContext
+                .Matches
+                .Include(match => match.UserMatchBets)
+                .Include(match => match.HomeTeam)
+                .Include(match => match.AwayTeam)
+                .OrderBy(match => match.Start)
+                .Skip(page * pageSize)
+                .Take(pageSize)
+                .ToListAsync(cancellationToken);
     }
 }
