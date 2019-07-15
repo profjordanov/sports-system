@@ -1,7 +1,9 @@
-﻿using AutoMapper;
+﻿using System.Collections.Generic;
+using AutoMapper;
 using Jbet.Domain.Entities;
 using Jbet.Domain.Views.Team;
 using System.Linq;
+using Jbet.Domain.Views.Player;
 
 namespace Jbet.Core.TeamContext
 {
@@ -18,6 +20,9 @@ namespace Jbet.Core.TeamContext
                 .ForMember(
                     dest => dest.Votes,
                     cnf => cnf.MapFrom(src => src.Votes.Any() ? src.Votes.Sum(v => v.Value) : 0))
+                .ForMember(
+                    dest => dest.Players,
+                    cnf => cnf.MapFrom(src => src.Players))
                 .ForMember(
                     dest => dest.UserHasVoted,
                     cnf => cnf.Ignore());
