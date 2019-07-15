@@ -26,6 +26,7 @@ namespace Jbet.Persistence.Repositories
                 .Include(match => match.AwayTeam)
                 .Include(match => match.UserMatchBets)
                 .Include(match => match.Comments)
+                .ThenInclude(comment => comment.User)
                 .FirstOrDefaultAsync(match => match.Id == id);
 
         public IAsyncEnumerable<Match> TopTreeMatchesByBetsAsync() =>
