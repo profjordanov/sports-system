@@ -22,6 +22,8 @@ namespace Jbet.Persistence.Repositories
         public Task<Team> GetByIdAsync(Guid id) =>
             _dbContext
                 .Teams
+                .Include(team => team.Players)
+                .Include(team => team.Votes)
                 .FirstOrDefaultAsync(team => team.Id == id);
 
         public async Task<IEnumerable<Team>> BestTreeTeamsByVoteAsync(CancellationToken cancellationToken) =>
