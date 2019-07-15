@@ -223,6 +223,7 @@ namespace Jbet.Api.Configuration
                 options.DatabaseSchemaName = schemaName;
 
                 options.Events.InlineProjections.AggregateStreamsWith<Vote>();
+                options.Events.InlineProjections.AggregateStreamsWith<Comment>();
 
                 var events = typeof(UserVotedForTeam)
                     .Assembly

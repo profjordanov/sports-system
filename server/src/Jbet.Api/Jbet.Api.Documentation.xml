@@ -47,6 +47,11 @@
             Logout. (unsets the auth cookie)
             </summary>
         </member>
+        <member name="T:Jbet.Api.Controllers.CommentsController">
+            <summary>
+            A controller responsible for comments for matches.
+            </summary>
+        </member>
         <member name="T:Jbet.Api.Controllers.HomeController">
             <inheritdoc />
             <summary>
@@ -80,10 +85,10 @@
         </member>
         <member name="M:Jbet.Api.Controllers.MatchesController.MatchDetails(System.Guid)">
             <summary>
-            Retrieves information about the team and its players.
+            Logged-in users can view match details (home team, away team, date and comments).
             </summary>
-            <response code="200">The team was found.</response>
-            <response code="404">The team was not found.</response>
+            <response code="200">The match was found.</response>
+            <response code="404">The match was not found.</response>
         </member>
         <member name="T:Jbet.Api.Controllers.TeamsController">
             <summary>
