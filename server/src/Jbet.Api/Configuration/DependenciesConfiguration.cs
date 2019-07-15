@@ -18,6 +18,7 @@ using Jbet.Business.Base;
 using Jbet.Core.AuthContext;
 using Jbet.Core.AuthContext.Configuration;
 using Jbet.Domain.Events.Base;
+using Jbet.Domain.Events.Votes;
 using Jbet.Domain.Repositories;
 using Jbet.Persistence.Repositories;
 using Marten;
@@ -220,6 +221,16 @@ namespace Jbet.Api.Configuration
                 options.AutoCreateSchemaObjects = AutoCreate.All;
                 options.Events.DatabaseSchemaName = schemaName;
                 options.DatabaseSchemaName = schemaName;
+
+                options.Events.InlineProjections.AggregateStreamsWith<Vote>();
+
+                var events = typeof(UserVotedForTeam)
+                    .Assembly
+                    .GetTypes()
+                    .Where(t => typeof(IEvent).IsAssignableFrom(t))
+                    .ToList();
+
+                options.Events.AddEventTypes(events);
             });
 
             services.AddSingleton<IDocumentStore>(documentStore);
