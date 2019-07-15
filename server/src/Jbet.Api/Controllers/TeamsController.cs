@@ -1,6 +1,14 @@
-﻿using Jbet.Api.Hateoas.Resources.Base;
+﻿using System;
+using System.Net;
+using System.Threading.Tasks;
+using Jbet.Api.Hateoas.Resources.Base;
+using Jbet.Api.Hateoas.Resources.Team;
+using Jbet.Core.TeamContext.Queries;
+using Jbet.Domain;
+using Jbet.Domain.Views.Team;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Optional.Async.Extensions;
 
 namespace Jbet.Api.Controllers
 {
@@ -13,5 +21,18 @@ namespace Jbet.Api.Controllers
             : base(mediator, resourceMapper)
         {
         }
+
+        /// <summary>
+        /// Retrieves information about the team and its players.
+        /// </summary>
+        /// <response code="200">The team was found.</response>
+        /// <response code="404">The team was not found.</response>
+        [HttpGet("{id}", Name = nameof(Details))]
+        [ProducesResponseType(typeof(TeamDetailsResource), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(Error), (int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> Details([FromRoute] Guid id) =>
+            (await Mediator.Send(new GetTeamDetails(id, CurrentUserId))
+                .MapAsync(ToResourceAsync<TeamDetailsView, TeamDetailsResource>))
+                .Match(Ok, Error);
     }
 }

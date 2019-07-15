@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using Jbet.Domain.Entities;
+﻿using Jbet.Domain.Entities;
 using Jbet.Domain.Repositories;
 using Jbet.Persistence.EntityFramework;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Jbet.Persistence.Repositories
 {
@@ -17,6 +18,11 @@ namespace Jbet.Persistence.Repositories
         {
             _dbContext = dbContext;
         }
+
+        public Task<Team> GetByIdAsync(Guid id) =>
+            _dbContext
+                .Teams
+                .FirstOrDefaultAsync(team => team.Id == id);
 
         public async Task<IEnumerable<Team>> BestTreeTeamsByVoteAsync(CancellationToken cancellationToken) =>
             await _dbContext
