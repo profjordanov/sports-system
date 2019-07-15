@@ -65,6 +65,19 @@
             </returns>
             <response code="200"></response>
         </member>
+        <member name="T:Jbet.Api.Controllers.MatchesController">
+            <summary>
+            A controller responsible for matches data.
+            </summary>
+        </member>
+        <member name="M:Jbet.Api.Controllers.MatchesController.Index(Jbet.Core.MatchContext.Queries.GetAllMatches)">
+            <summary>
+            Shows all matches by paging.
+            </summary>
+            <param name="query"></param>
+            <returns>A collection of <see cref="T:Jbet.Domain.Views.Match.MatchView"/></returns>
+            <response code="200"></response>
+        </member>
         <member name="T:Jbet.Api.Filters.EntityFrameworkTransactionFilter">
             <inheritdoc />
             <summary>

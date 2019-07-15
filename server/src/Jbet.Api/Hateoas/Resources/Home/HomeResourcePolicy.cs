@@ -1,6 +1,6 @@
-﻿using System;
-using Jbet.Api.Hateoas.Resources.Base;
+﻿using Jbet.Api.Hateoas.Resources.Base;
 using RiskFirst.Hateoas;
+using System;
 
 namespace Jbet.Api.Hateoas.Resources.Home
 {

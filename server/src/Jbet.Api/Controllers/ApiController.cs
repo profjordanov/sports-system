@@ -27,10 +27,10 @@ namespace Jbet.Api.Controllers
         }
 
         protected IMediator Mediator { get; }
+
         protected IResourceMapper ResourceMapper { get; }
 
         protected Guid CurrentUserId => TryGetGuidClaim(ClaimTypes.NameIdentifier).ValueOr(Guid.Empty);
-
 
         protected IActionResult Error(Error error)
         {

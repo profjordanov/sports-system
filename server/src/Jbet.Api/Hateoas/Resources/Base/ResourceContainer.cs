@@ -2,9 +2,9 @@
 
 namespace Jbet.Api.Hateoas.Resources.Base
 {
-    public class ResourceContainer<TResouce> : Resource
-        where TResouce : Resource
+    public class ResourceContainer<TResource> : Resource
+        where TResource : Resource
     {
-        public IEnumerable<TResouce> Items { get; set; }
+        public IEnumerable<TResource> Items { get; set; }
     }
 }
