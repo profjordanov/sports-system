@@ -24,6 +24,9 @@ namespace Jbet.Domain.Entities
         public virtual User User { get; set; }
 
         // Events
+        public UserCommentedMatch CommentMatchBySelf() =>
+            CommentMatch(Content, CreatedOn, MatchId, UserId);
+
         public UserCommentedMatch CommentMatch(
             string content,
             DateTime createdOn,
