@@ -1,4 +1,5 @@
-﻿using Jbet.Domain.Entities;
+﻿using System;
+using Jbet.Domain.Entities;
 using Jbet.Domain.Repositories;
 using Jbet.Persistence.EntityFramework;
 using Microsoft.EntityFrameworkCore;
@@ -17,6 +18,11 @@ namespace Jbet.Persistence.Repositories
         {
             _dbContext = dbContext;
         }
+
+        public Task<Match> GetByIdAsync(Guid id) =>
+            _dbContext
+                .Matches
+                .FirstOrDefaultAsync(match => match.Id == id);
 
         public IAsyncEnumerable<Match> TopTreeMatchesByBetsAsync() =>
              _dbContext
