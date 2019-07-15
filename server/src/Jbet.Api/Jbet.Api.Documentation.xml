@@ -52,6 +52,13 @@
             A controller responsible for comments for matches.
             </summary>
         </member>
+        <member name="M:Jbet.Api.Controllers.CommentsController.Comment(Jbet.Core.CommentContext.HttpRequests.CommentInput)">
+            <summary>
+            Logged-in users can add comments for given match.
+            </summary>
+            <response code="201">A comment was created.</response>
+            <response code="409">User already comment.</response>
+        </member>
         <member name="T:Jbet.Api.Controllers.HomeController">
             <inheritdoc />
             <summary>

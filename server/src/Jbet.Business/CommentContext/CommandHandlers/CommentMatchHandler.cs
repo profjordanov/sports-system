@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using FluentValidation;
 using Jbet.Business.Base;
 using Jbet.Core.CommentContext.Commands;
@@ -10,6 +9,7 @@ using Jbet.Domain.Repositories;
 using MediatR;
 using Optional;
 using Optional.Async.Extensions;
+using System.Threading.Tasks;
 
 namespace Jbet.Business.CommentContext.CommandHandlers
 {
@@ -27,10 +27,10 @@ namespace Jbet.Business.CommentContext.CommandHandlers
             _commentRepository = commentRepository;
         }
 
-        public override Task<Option<Unit, Error>> Handle(CommentMatch command)
-        {
-            throw new System.NotImplementedException();
-        }
+        public override Task<Option<Unit, Error>> Handle(CommentMatch command) =>
+            SimilarCommentShouldNotExist(command).FlatMapAsync(_ =>
+            SaveToRelationalDatabase(command)).MapAsync(comment =>
+            PublishEvents(comment.Id, comment.CommentMatchBySelf()));
 
         private Task<Option<Unit, Error>> SimilarCommentShouldNotExist(CommentMatch command) =>
             _commentRepository.GetByMatchAndUserAsync(command.MatchId, command.UserId)
