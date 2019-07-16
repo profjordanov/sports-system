@@ -224,6 +224,7 @@ namespace Jbet.Api.Configuration
 
                 options.Events.InlineProjections.AggregateStreamsWith<Vote>();
                 options.Events.InlineProjections.AggregateStreamsWith<Comment>();
+                options.Events.InlineProjections.AggregateStreamsWith<UserMatchBet>();
 
                 var events = typeof(UserVotedForTeam)
                     .Assembly

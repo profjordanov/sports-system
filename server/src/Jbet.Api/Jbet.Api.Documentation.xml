@@ -47,6 +47,24 @@
             Logout. (unsets the auth cookie)
             </summary>
         </member>
+        <member name="T:Jbet.Api.Controllers.BetsController">
+            <inheritdoc />
+            <summary>
+            A controller responsible for user's bets.
+            </summary>
+        </member>
+        <member name="M:Jbet.Api.Controllers.BetsController.BetForAwayTeam(Jbet.Core.UserMatchBetContext.HttpRequests.MatchAwayBetInput)">
+            <summary>
+            Logged-in users can bet for the away team.
+            </summary>
+            <param name="input">HTTP request.</param>
+        </member>
+        <member name="M:Jbet.Api.Controllers.BetsController.BetForHomeTeam(Jbet.Core.UserMatchBetContext.HttpRequests.MatchHomeBetInput)">
+            <summary>
+            Logged-in users can bet for the home team.
+            </summary>
+            <param name="input">HTTP request.</param>
+        </member>
         <member name="T:Jbet.Api.Controllers.CommentsController">
             <summary>
             A controller responsible for comments for matches.
