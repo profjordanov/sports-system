@@ -60,6 +60,7 @@ namespace Jbet.Api
 
             services.AddMarten(Configuration);
             services.AddCqrs();
+            services.AddSignalR();
             services.AddMediatR();
             services.AddRepositories();
 
