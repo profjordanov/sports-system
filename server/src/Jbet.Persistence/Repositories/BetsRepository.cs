@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Jbet.Domain.Entities;
 using Jbet.Domain.Repositories;
 using Jbet.Persistence.EntityFramework;
+using Microsoft.EntityFrameworkCore;
 
 namespace Jbet.Persistence.Repositories
 {
@@ -47,5 +49,19 @@ namespace Jbet.Persistence.Repositories
 
             return entity;
         }
+
+        public decimal SumAwayBetsByMatchId(Guid matchId) =>
+            _dbContext
+                .UserMatchBets
+                .AsNoTracking()
+                .Where(bet => bet.MatchId == matchId)
+                .Sum(bet => bet.AwayBet);
+
+        public decimal SumHomeBetsByMatchId(Guid matchId) =>
+            _dbContext
+                .UserMatchBets
+                .AsNoTracking()
+                .Where(bet => bet.MatchId == matchId)
+                .Sum(bet => bet.HomeBet);
     }
 }

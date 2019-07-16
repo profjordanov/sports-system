@@ -21,5 +21,9 @@ namespace Jbet.Domain.Repositories
             Guid matchId,
             decimal homeBet,
             decimal awayBet);
+
+        decimal SumAwayBetsByMatchId(Guid matchId);
+
+        decimal SumHomeBetsByMatchId(Guid matchId);
     }
 }
