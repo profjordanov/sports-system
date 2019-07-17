@@ -71,5 +71,57 @@ namespace Jbet.Tests.Business.AuthContext
             jwt.ValidFrom.ShouldBe(DateTime.UtcNow, TimeSpan.FromSeconds(10));
             jwt.ValidTo.ShouldBe(DateTime.UtcNow.Add(_jwtConfiguration.ValidFor), TimeSpan.FromSeconds(10));
         }
+
+        [Theory]
+        [AutoData]
+        public void CanGenerateProperEncodedToken(string userId, string email)
+        {
+            // Arrange
+            // Act
+            var result = _jwtFactory.GenerateEncodedToken(userId, email, new List<Claim>());
+
+            // Assert
+            var jwt = new JwtSecurityToken(result);
+
+            jwt.Claims.ShouldContain(c => c.Type == JwtRegisteredClaimNames.Iss && c.Value == _jwtConfiguration.Issuer);
+            jwt.Claims.ShouldContain(c => c.Type == JwtRegisteredClaimNames.Sub && c.Value == userId);
+            jwt.Claims.ShouldContain(c => c.Type == JwtRegisteredClaimNames.Email && c.Value == email);
+            jwt.Claims.ShouldContain(c => c.Type == JwtRegisteredClaimNames.Aud && c.Value == _jwtConfiguration.Audience);
+
+            jwt.ValidFrom.ShouldBe(DateTime.UtcNow, TimeSpan.FromSeconds(10));
+            jwt.ValidTo.ShouldBe(DateTime.UtcNow.Add(_jwtConfiguration.ValidFor), TimeSpan.FromSeconds(10));
+        }
+
+        [Fact]
+        public void CannotBeInitializedWithNullOptions() =>
+            ShouldThrowForConfiguration(null, typeof(ArgumentNullException));
+
+        [Fact]
+        public void CannotBeInitializedWithInvalidValidity() =>
+            ShouldThrowForConfiguration(
+                new JwtConfiguration
+                {
+                    ValidFor = TimeSpan.Zero.Subtract(TimeSpan.FromDays(1))
+                },
+                typeof(ArgumentException));
+
+        [Fact]
+        public void CannotBeInitializedWithNullSigningCredentials() =>
+            ShouldThrowForConfiguration(
+                new JwtConfiguration
+                {
+                    SigningCredentials = null
+                },
+                typeof(ArgumentNullException));
+
+        private static void ShouldThrowForConfiguration(JwtConfiguration configuration, Type expectedExceptionType)
+        {
+            var options = Options.Create(configuration);
+
+            Should.Throw(
+                () => new JwtFactory(options),
+                expectedExceptionType);
+        }
+
     }
 }
