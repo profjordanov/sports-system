@@ -17,7 +17,7 @@ namespace Jbet.Tests
             BaseUrl = $"http://localhost:{GetFreeTcpPort()}";
 
             var webhost = Program
-                .CreateWebHostBuilder(new string[] { "--environment", "IntegrationTests" }, BaseUrl)
+                .CreateWebHostBuilder(new[] { "--environment", "IntegrationTests" }, BaseUrl)
                 .Build();
 
             webhost.Start();
@@ -33,6 +33,7 @@ namespace Jbet.Tests
         }
 
         public static string EventStoreConnectionString => _configuration.GetSection("EventStore")["ConnectionString"];
+
         public static string RelationalDbConnectionString => _configuration.GetConnectionString("DefaultConnection");
 
         private static int GetFreeTcpPort()
