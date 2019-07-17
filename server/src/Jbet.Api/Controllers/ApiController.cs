@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using Jbet.Api.Hateoas.Resources.Base;
+﻿using Jbet.Api.Hateoas.Resources.Base;
 using Jbet.Core.Base;
 using Jbet.Domain;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Optional;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace Jbet.Api.Controllers
 {

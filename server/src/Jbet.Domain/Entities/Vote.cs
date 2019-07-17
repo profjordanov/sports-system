@@ -1,7 +1,7 @@
 ﻿using Jbet.Domain._Base;
+using Jbet.Domain.Events.Votes;
 using System;
 using System.ComponentModel.DataAnnotations;
-using Jbet.Domain.Events.Votes;
 
 namespace Jbet.Domain.Entities
 {

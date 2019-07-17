@@ -1,6 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using FluentValidation;
 using Jbet.Business.Base;
 using Jbet.Core.Base;
@@ -10,6 +8,8 @@ using Jbet.Domain.Events.Base;
 using Jbet.Domain.Repositories;
 using MediatR;
 using Optional;
+using System;
+using System.Threading.Tasks;
 
 namespace Jbet.Business.AuthContext.CommandHandlers
 {

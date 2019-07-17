@@ -1,10 +1,24 @@
-﻿using Jbet.Domain.Entities;
+﻿using Jbet.Api.Hateoas.Resources.Base;
+using Jbet.Business.AuthContext;
+using Jbet.Business.Base;
+using Jbet.Core.AuthContext;
+using Jbet.Core.AuthContext.Configuration;
+using Jbet.Domain.Entities;
+using Jbet.Domain.Events.Base;
+using Jbet.Domain.Events.Votes;
+using Jbet.Domain.Repositories;
 using Jbet.Persistence.EntityFramework;
+using Jbet.Persistence.Repositories;
+using Marten;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
+using RiskFirst.Hateoas;
+using Swashbuckle.AspNetCore.Swagger;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,20 +26,6 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using Jbet.Api.Hateoas.Resources.Base;
-using Jbet.Business.AuthContext;
-using Jbet.Business.Base;
-using Jbet.Core.AuthContext;
-using Jbet.Core.AuthContext.Configuration;
-using Jbet.Domain.Events.Base;
-using Jbet.Domain.Events.Votes;
-using Jbet.Domain.Repositories;
-using Jbet.Persistence.Repositories;
-using Marten;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using RiskFirst.Hateoas;
-using Swashbuckle.AspNetCore.Swagger;
 
 namespace Jbet.Api.Configuration
 {

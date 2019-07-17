@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Jbet.Domain.Entities;
+using MediatR;
+using Optional;
+using System;
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Jbet.Domain.Entities;
-using MediatR;
-using Optional;
 
 namespace Jbet.Domain.Repositories
 {

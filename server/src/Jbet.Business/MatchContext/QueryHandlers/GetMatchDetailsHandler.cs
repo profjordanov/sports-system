@@ -1,5 +1,4 @@
-﻿using System;
-using AutoMapper;
+﻿using AutoMapper;
 using Jbet.Core.Base;
 using Jbet.Core.MatchContext.Queries;
 using Jbet.Domain;
@@ -8,6 +7,7 @@ using Jbet.Domain.Repositories;
 using Jbet.Domain.Views.Match;
 using Optional;
 using Optional.Async.Extensions;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 

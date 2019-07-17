@@ -1,12 +1,12 @@
-﻿using System.Net;
-using System.Threading.Tasks;
-using Jbet.Api.Hateoas.Resources.Base;
+﻿using Jbet.Api.Hateoas.Resources.Base;
 using Jbet.Api.Hateoas.Resources.Home;
 using Jbet.Core.HomeContext.Queries;
 using Jbet.Domain.Views.Home;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
+using System.Threading.Tasks;
 
 namespace Jbet.Api.Controllers
 {

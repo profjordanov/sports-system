@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using AutoMapper;
+﻿using AutoMapper;
 using Jbet.Domain.Entities;
-using Jbet.Domain.Views.Team;
-using System.Linq;
 using Jbet.Domain.Views.Player;
+using Jbet.Domain.Views.Team;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Jbet.Core.TeamContext
 {

@@ -1,8 +1,8 @@
-﻿using System;
-using System.Threading.Tasks;
-using Jbet.Domain.Repositories;
+﻿using Jbet.Domain.Repositories;
 using Jbet.Domain.Views;
 using Optional;
+using System;
+using System.Threading.Tasks;
 
 namespace Jbet.Persistence.Repositories
 {

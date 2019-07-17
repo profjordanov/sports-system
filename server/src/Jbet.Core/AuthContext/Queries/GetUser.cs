@@ -1,8 +1,8 @@
-﻿using System;
-using Jbet.Core.Base;
+﻿using Jbet.Core.Base;
 using Jbet.Domain;
 using Jbet.Domain.Views;
 using Optional;
+using System;
 
 namespace Jbet.Core.AuthContext.Queries
 {

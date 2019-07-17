@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using Jbet.Api.Hateoas.Resources.Base;
+﻿using Jbet.Api.Hateoas.Resources.Base;
 using Jbet.Domain.Views.Match;
 using Jbet.Domain.Views.Team;
+using System.Collections.Generic;
 
 namespace Jbet.Api.Hateoas.Resources.Home
 {

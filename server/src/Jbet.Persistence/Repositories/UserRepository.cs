@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using Jbet.Domain;
+﻿using Jbet.Domain;
 using Jbet.Domain.Entities;
 using Jbet.Domain.Repositories;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Optional;
 using Optional.Extensions;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace Jbet.Persistence.Repositories
 {

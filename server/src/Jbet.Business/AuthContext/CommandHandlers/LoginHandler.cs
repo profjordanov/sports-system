@@ -1,9 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading;
-using System.Threading.Tasks;
-using FluentValidation;
+﻿using FluentValidation;
 using Jbet.Core.AuthContext;
 using Jbet.Core.AuthContext.Commands;
 using Jbet.Core.Base;
@@ -14,6 +9,11 @@ using Jbet.Domain.Views;
 using Optional;
 using Optional.Async.Extensions;
 using Optional.Extensions;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Jbet.Business.AuthContext.CommandHandlers
 {
