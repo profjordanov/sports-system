@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using Jbet.Domain.Views.Match;
+﻿using Jbet.Domain.Views.Match;
 using Jbet.Domain.Views.Team;
+using System.Collections.Generic;
 
 namespace Jbet.Domain.Views.Home
 {

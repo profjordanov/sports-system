@@ -1,10 +1,10 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
-using Jbet.Domain.Entities;
+﻿using Jbet.Domain.Entities;
 using Jbet.Domain.Repositories;
 using Jbet.Persistence.EntityFramework;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Jbet.Persistence.Repositories
 {

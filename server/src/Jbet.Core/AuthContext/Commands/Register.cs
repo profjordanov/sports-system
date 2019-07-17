@@ -1,5 +1,5 @@
-﻿using System;
-using Jbet.Core.Base;
+﻿using Jbet.Core.Base;
+using System;
 
 namespace Jbet.Core.AuthContext.Commands
 {

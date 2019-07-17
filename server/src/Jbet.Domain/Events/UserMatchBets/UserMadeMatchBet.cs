@@ -1,5 +1,5 @@
-﻿using System;
-using Jbet.Domain.Events.Base;
+﻿using Jbet.Domain.Events.Base;
+using System;
 
 namespace Jbet.Domain.Events.UserMatchBets
 {

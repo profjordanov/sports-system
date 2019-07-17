@@ -1,6 +1,4 @@
-﻿using System.Net;
-using System.Threading.Tasks;
-using Jbet.Api.Hateoas.Resources.Auth;
+﻿using Jbet.Api.Hateoas.Resources.Auth;
 using Jbet.Api.Hateoas.Resources.Base;
 using Jbet.Core.AuthContext;
 using Jbet.Core.AuthContext.Commands;
@@ -11,6 +9,8 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Optional.Async.Extensions;
+using System.Net;
+using System.Threading.Tasks;
 
 namespace Jbet.Api.Controllers
 {

@@ -1,19 +1,19 @@
-﻿using System;
-using Jbet.Api.Hateoas.Resources.Base;
+﻿using Jbet.Api.Hateoas.Resources.Base;
 using Jbet.Api.Hateoas.Resources.Match;
+using Jbet.Api.Hateoas.Resources.Team;
 using Jbet.Core.MatchContext.Queries;
+using Jbet.Core.TeamContext.Queries;
+using Jbet.Domain;
 using Jbet.Domain.Views.Match;
+using Jbet.Domain.Views.Team;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Optional.Async.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
-using Jbet.Api.Hateoas.Resources.Team;
-using Jbet.Core.TeamContext.Queries;
-using Jbet.Domain;
-using Jbet.Domain.Views.Team;
-using Optional.Async.Extensions;
 
 namespace Jbet.Api.Controllers
 {

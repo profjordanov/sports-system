@@ -1,7 +1,4 @@
-﻿using System;
-using System.Threading;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using FluentValidation;
 using Jbet.Business.Base;
 using Jbet.Core.VoteContext.Commands;
@@ -12,6 +9,9 @@ using Jbet.Domain.Repositories;
 using MediatR;
 using Optional;
 using Optional.Async.Extensions;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Jbet.Business.VoteContext.CommandHandlers
 {

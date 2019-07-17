@@ -1,7 +1,7 @@
-﻿using System;
-using System.Threading.Tasks;
-using Jbet.Domain.Views;
+﻿using Jbet.Domain.Views;
 using Optional;
+using System;
+using System.Threading.Tasks;
 
 namespace Jbet.Domain.Repositories
 {

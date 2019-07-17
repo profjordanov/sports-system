@@ -1,5 +1,5 @@
-﻿using System;
-using Jbet.Api.Hateoas.Resources.Base;
+﻿using Jbet.Api.Hateoas.Resources.Base;
+using System;
 
 namespace Jbet.Api.Hateoas.Resources.Auth
 {

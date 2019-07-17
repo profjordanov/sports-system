@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using Jbet.Core.Base;
 using Jbet.Core.HomeContext.Queries;
 using Jbet.Domain.Entities;
@@ -10,6 +6,10 @@ using Jbet.Domain.Repositories;
 using Jbet.Domain.Views.Home;
 using Jbet.Domain.Views.Match;
 using Jbet.Domain.Views.Team;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Jbet.Business.HomeContext.QueryHandlers
 {

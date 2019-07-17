@@ -1,5 +1,5 @@
-﻿using System;
-using RiskFirst.Hateoas;
+﻿using RiskFirst.Hateoas;
+using System;
 
 namespace Jbet.Api.Hateoas.Resources.Base
 {

@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Jbet.Domain.Entities;
+using System;
 using System.Threading.Tasks;
-using Jbet.Domain.Entities;
 
 namespace Jbet.Domain.Repositories
 {

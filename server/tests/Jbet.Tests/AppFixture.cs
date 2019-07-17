@@ -1,14 +1,14 @@
-﻿using System;
-using System.Net;
-using System.Net.Http;
-using System.Net.Sockets;
-using System.Threading.Tasks;
-using Jbet.Api;
+﻿using Jbet.Api;
 using Jbet.Core.Base;
 using Jbet.Persistence.EntityFramework;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Net;
+using System.Net.Http;
+using System.Net.Sockets;
+using System.Threading.Tasks;
 
 namespace Jbet.Tests
 {
@@ -108,7 +108,6 @@ namespace Jbet.Tests
             route = route.TrimStart('/', '\\');
             return $"{BaseUrl}/{route}";
         }
-
 
         public Task<TResponse> SendAsync<TResponse>(IRequest<TResponse> request)
         {

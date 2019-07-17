@@ -1,7 +1,7 @@
-﻿using System;
-using Jbet.Core.AuthContext;
+﻿using Jbet.Core.AuthContext;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Configuration;
+using System;
 
 namespace Jbet.Api.Configuration
 {

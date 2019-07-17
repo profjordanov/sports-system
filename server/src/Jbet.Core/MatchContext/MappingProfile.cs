@@ -1,7 +1,7 @@
-﻿using System.Linq;
-using AutoMapper;
+﻿using AutoMapper;
 using Jbet.Domain.Entities;
 using Jbet.Domain.Views.Match;
+using System.Linq;
 
 namespace Jbet.Core.MatchContext
 {

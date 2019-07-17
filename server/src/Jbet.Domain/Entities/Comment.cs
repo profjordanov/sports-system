@@ -1,7 +1,7 @@
 ﻿using Jbet.Domain._Base;
+using Jbet.Domain.Events.Comments;
 using System;
 using System.ComponentModel.DataAnnotations;
-using Jbet.Domain.Events.Comments;
 
 namespace Jbet.Domain.Entities
 {
