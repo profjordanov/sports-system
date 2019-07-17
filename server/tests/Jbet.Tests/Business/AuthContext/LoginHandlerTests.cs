@@ -1,8 +1,19 @@
-﻿using Xunit;
+﻿using Jbet.Core.AuthContext.Commands;
+using Jbet.Domain;
+using Jbet.Tests.Customizations;
+using Jbet.Tests.Extensions;
+using Shouldly;
+using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Threading.Tasks;
+using Xunit;
 
 namespace Jbet.Tests.Business.AuthContext
 {
-    public class LoginHandlerTests
+    /// <summary>
+    /// Tests for <see cref="Jbet.Business.AuthContext.CommandHandlers.LoginHandler"/>.
+    /// </summary>
+    public class LoginHandlerTests : ResetDatabaseLifetime
     {
         private readonly AppFixture _fixture;
 
@@ -11,11 +22,59 @@ namespace Jbet.Tests.Business.AuthContext
             _fixture = new AppFixture();
         }
 
-        [Fact]
-        public void Test2()
+        [Theory]
+        [CustomizedAutoData]
+        public async Task CanLogin(Register registerUserCommand)
         {
-            var x = 0;
-            Assert.Equal(0, x);
+            // Arrange
+            await _fixture.SendAsync(registerUserCommand);
+
+            var loginCommand = new Login
+            {
+                Email = registerUserCommand.Email,
+                Password = registerUserCommand.Password
+            };
+
+            // Act
+            var result = await _fixture.SendAsync(loginCommand);
+
+            // Assert
+            // TODO: Validate subject, claims, etc.
+            result.Exists(jwt => IsValidJwtString(jwt.TokenString)).ShouldBeTrue();
+        }
+
+        [Theory]
+        [CustomizedAutoData]
+        public async Task CannotLoginWithInvalidCredentials(Register registerUserCommand)
+        {
+            // Arrange
+            await _fixture.SendAsync(registerUserCommand);
+
+            var loginCommand = new Login
+            {
+                Email = registerUserCommand.Email,
+                Password = registerUserCommand.Password + "123" // Must be different
+            };
+
+            // Act
+            var result = await _fixture.SendAsync(loginCommand);
+
+            // Assert
+            result.ShouldHaveErrorOfType(ErrorType.Unauthorized);
+        }
+
+        private static bool IsValidJwtString(string tokenString)
+        {
+            try
+            {
+                var decodedJwt = new JwtSecurityToken(tokenString);
+
+                return true;
+            }
+            catch (ArgumentException)
+            {
+                return false;
+            }
         }
     }
 }
