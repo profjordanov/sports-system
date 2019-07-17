@@ -63,6 +63,34 @@ namespace Jbet.Tests.Business.AuthContext
             result.ShouldHaveErrorOfType(ErrorType.Unauthorized);
         }
 
+        [Theory]
+        [CustomizedAutoData]
+        public async Task CannotLoginWithInvalidEmail(Login command)
+        {
+            // Arrange
+            command.Email = "invalid-email";
+
+            // Act
+            var result = await _fixture.SendAsync(command);
+
+            // Assert
+            result.ShouldHaveErrorOfType(ErrorType.Validation);
+        }
+
+        [Theory]
+        [CustomizedAutoData]
+        public async Task CannotLoginWithUnexistingEmail(Login command)
+        {
+            // Arrange
+            // We are not registering any users so the email is definitely not going to be found
+
+            // Act
+            var result = await _fixture.SendAsync(command);
+
+            // Assert
+            result.ShouldHaveErrorOfType(ErrorType.NotFound);
+        }
+
         private static bool IsValidJwtString(string tokenString)
         {
             try
