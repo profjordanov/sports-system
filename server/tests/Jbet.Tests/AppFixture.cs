@@ -53,6 +53,14 @@ namespace Jbet.Tests
                 return action(dbContext);
             });
 
+        public Task<T> ExecuteDbContextAsync<T>(Func<ApplicationDbContext, Task<T>> action) =>
+            ExecuteScopeAsync(sp =>
+            {
+                var dbContext = sp.GetService<ApplicationDbContext>();
+
+                return action(dbContext);
+            });
+
         public async Task ExecuteScopeAsync(Func<IServiceProvider, Task> action)
         {
             using (var scope = _scopeFactory.CreateScope())
