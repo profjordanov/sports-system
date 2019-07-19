@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Security.Claims;
-using Jbet.Core.AuthContext.Commands;
-using System.Threading.Tasks;
+﻿using Jbet.Core.AuthContext.Commands;
 using Jbet.Domain.Entities;
 using Jbet.Domain.Views;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Collections.Generic;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace Jbet.Tests.Business.AuthContext
 {

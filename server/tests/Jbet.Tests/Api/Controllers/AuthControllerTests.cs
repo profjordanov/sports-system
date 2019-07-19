@@ -1,4 +1,5 @@
-﻿using Jbet.Api.Hateoas;
+﻿using AutoFixture;
+using Jbet.Api.Hateoas;
 using Jbet.Api.Hateoas.Resources.Auth;
 using Jbet.Core.AuthContext;
 using Jbet.Core.AuthContext.Commands;
@@ -10,7 +11,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using AutoFixture;
 using Xunit;
 
 namespace Jbet.Tests.Api.Controllers

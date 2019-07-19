@@ -1,6 +1,6 @@
-﻿using System;
-using AutoFixture;
+﻿using AutoFixture;
 using Jbet.Core.AuthContext.Commands;
+using System;
 
 namespace Jbet.Tests.Customizations
 {

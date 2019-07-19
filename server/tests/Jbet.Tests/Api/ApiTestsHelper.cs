@@ -1,11 +1,11 @@
-﻿using System;
+﻿using AutoFixture;
+using Jbet.Core.AuthContext.Commands;
+using Jbet.Tests.Business.AuthContext;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using AutoFixture;
-using Jbet.Core.AuthContext.Commands;
-using Jbet.Tests.Business.AuthContext;
 
 namespace Jbet.Tests.Api
 {

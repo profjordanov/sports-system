@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using Jbet.Api.Hateoas.Resources.Base;
 using Shouldly;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Jbet.Api.Hateoas.Resources.Base;
 
 namespace Jbet.Tests.Extensions
 {

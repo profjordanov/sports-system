@@ -1,16 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using FakeItEasy;
-using Jbet.Api.Filters;
-using Jbet.Domain;
-using Jbet.Tests.Customizations;
+﻿using FakeItEasy;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Abstractions;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Routing;
-using Shouldly;
-using Xunit;
+using System;
+using System.Collections.Generic;
 
 namespace Jbet.Tests.Api.Filters
 {
@@ -27,6 +22,19 @@ namespace Jbet.Tests.Api.Filters
                 A.Fake<Controller>())));
 
             return filterContext;
+        }
+
+        public static ExceptionContext GetExceptionContext(Exception exception)
+        {
+            var actionContext = GetFakeActionContext();
+
+            var exceptionContext = A.Fake<ExceptionContext>(context => context.WithArgumentsForConstructor(() => new ExceptionContext(
+                actionContext,
+                new List<IFilterMetadata>())));
+
+            exceptionContext.Exception = exception;
+
+            return exceptionContext;
         }
 
         private static ActionContext GetFakeActionContext(string requestMethod = null)
