@@ -45,6 +45,8 @@ namespace Jbet.Tests
 
         public static string RelationalDbConnectionString => _configuration.GetConnectionString("DefaultConnection");
 
+        #region ApplicationDbContextRegion
+
         public Task ExecuteDbContextAsync(Func<ApplicationDbContext, Task> action) =>
             ExecuteScopeAsync(sp =>
             {
@@ -60,6 +62,8 @@ namespace Jbet.Tests
 
                 return action(dbContext);
             });
+
+        #endregion
 
         public async Task ExecuteScopeAsync(Func<IServiceProvider, Task> action)
         {
