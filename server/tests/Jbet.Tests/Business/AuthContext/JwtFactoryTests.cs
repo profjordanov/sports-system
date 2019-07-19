@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
-using AutoFixture;
+﻿using AutoFixture;
 using AutoFixture.Kernel;
 using AutoFixture.Xunit2;
 using Jbet.Business.AuthContext;
@@ -12,6 +6,12 @@ using Jbet.Core.AuthContext.Configuration;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Shouldly;
+using System;
+using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
+using System.Security.Claims;
+using System.Text;
 using Xunit;
 
 namespace Jbet.Tests.Business.AuthContext

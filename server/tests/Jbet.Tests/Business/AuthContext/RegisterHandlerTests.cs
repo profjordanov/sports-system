@@ -1,10 +1,10 @@
-﻿using System.Threading.Tasks;
-using Jbet.Core.AuthContext.Commands;
+﻿using Jbet.Core.AuthContext.Commands;
 using Jbet.Domain;
 using Jbet.Tests.Customizations;
 using Jbet.Tests.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Shouldly;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace Jbet.Tests.Business.AuthContext

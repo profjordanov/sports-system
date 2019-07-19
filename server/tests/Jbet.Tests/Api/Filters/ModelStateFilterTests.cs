@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Jbet.Api.Filters;
+﻿using Jbet.Api.Filters;
 using Jbet.Domain;
 using Jbet.Tests.Customizations;
 using Microsoft.AspNetCore.Mvc;
 using Shouldly;
+using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 
 namespace Jbet.Tests.Api.Filters
