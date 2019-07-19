@@ -5,4 +5,5 @@
 // a specific target and scoped to a namespace, type, member, etc.
 
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1101:Prefix local calls with this", Justification = "<Pending>", Scope = "member", Target = "~M:Jbet.Api.Controllers.ApiController.NotFound(Jbet.Domain.Error)~Microsoft.AspNetCore.Mvc.IActionResult")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1101:Prefix local calls with this", Justification = "<Pending>", Scope = "member", Target = "~M:Jbet.Api.Controllers.ApiController.TryGetGuidClaim(System.String)~Optional.Option{System.Guid}")]
 
