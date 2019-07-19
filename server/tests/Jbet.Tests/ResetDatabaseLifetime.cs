@@ -6,6 +6,9 @@ using Xunit;
 namespace Jbet.Tests
 {
     /// <inheritdoc />
+    /// <summary>
+    /// Keeps the relational and event store test databases clean.
+    /// </summary>
     public class ResetDatabaseLifetime : IAsyncLifetime
     {
         private readonly Checkpoint _relationalCheckpoint;
