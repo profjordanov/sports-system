@@ -103,6 +103,23 @@ namespace Jbet.Tests.Api.Controllers
                 },
                 fixture);
 
+        [Theory]
+        [CustomizedAutoData]
+        public Task LogoutShouldUnsetAuthCookie(Fixture fixture) =>
+            _apiHelper.InTheContextOfAnAuthenticatedUser(
+                async client =>
+                {
+                    // Act
+                    var response = await client
+                        .DeleteAsync(AuthRoute("logout"));
+
+                    // Assert
+                    response.Headers.ShouldContain(header =>
+                        header.Key == "Set-Cookie" &&
+                        header.Value.Any(v => v.Contains($"{AuthConstants.Cookies.AuthCookieName}=;")));
+                },
+                fixture);
+
         private static string AuthRoute(string route = null) =>
             $"/auth/{route?.TrimStart('/') ?? string.Empty}";
     }
