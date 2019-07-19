@@ -98,7 +98,7 @@ namespace Jbet.Api.Controllers
 
             return claimValue
                 .SomeNotNull()
-                .Filter(v => Guid.TryParse(v, out Guid _))
+                .Filter(v => Guid.TryParse(v, out _))
                 .Map(v => new Guid(v));
         }
     }
