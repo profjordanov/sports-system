@@ -1,6 +1,4 @@
-﻿using System;
-using System.Net;
-using FakeItEasy;
+﻿using FakeItEasy;
 using Jbet.Api.Filters;
 using Jbet.Domain;
 using Jbet.Tests.Customizations;
@@ -8,6 +6,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using Shouldly;
+using System;
+using System.Net;
 using Xunit;
 
 namespace Jbet.Tests.Api.Filters
