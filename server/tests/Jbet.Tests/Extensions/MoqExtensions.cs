@@ -40,8 +40,9 @@ namespace Jbet.Tests.Extensions
                     mock.Verify(expression, times);
                     hasBeenExecuted = true;
                 }
-                catch (Exception)
+                catch (Exception exception)
                 {
+                    Debug.Fail(exception.Message);
                 }
 
                 Thread.Sleep(20);
