@@ -10,3 +10,8 @@ Web based sport system to bet for matches, played by teams.
 - [x] Users have username, email and password (encrypted). Users hold also a set of bets and a set of comments for the matches.
 - [x] Users can bet some money for the home or away team for existing match.
 - [x] Users can vote for a team (give +1) ones.
+
+## Features
+1. Domain-Driven Design in Practice
+2. REST with [HATEOAS](https://github.com/riskfirst/riskfirst.hateoas)
+3. Command and Query Responsibility Segregation (CQRS) via [MediatR](https://github.com/jbogard/MediatR)
