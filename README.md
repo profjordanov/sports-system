@@ -1,5 +1,6 @@
 # JBet
 Web based sport system to bet for matches, played by teams.
+As a whole, this project aims to 
 
 ## Data Model
 ### The system holds teams, players, matches, comments, users, bets and votes.
@@ -15,3 +16,71 @@ Web based sport system to bet for matches, played by teams.
 1. Domain-Driven Design in Practice
 2. REST with [HATEOAS](https://github.com/riskfirst/riskfirst.hateoas)
 3. Command and Query Responsibility Segregation (CQRS) via [MediatR](https://github.com/jbogard/MediatR)
+4. Functional style command/query handlers
+Examples:
+```csharp
+// LoginHandler.cs
+public Task<Option<JwtView, Error>> Handle(Login command, CancellationToken cancellationToken = default) =>
+    ValidateCommand(command).FlatMapAsync(cmd =>
+    FindUser(command.Email).FlatMapAsync(user =>
+    CheckPassword(user, command.Password).FlatMapAsync(_ =>
+    GetExtraClaims(user).MapAsync(async claims =>
+    GenerateJwt(user, claims)))));
+```
+5. Event-sourcing
+6. A complete integration tests suite
+Examples:
+```csharp
+// AuthControllerTests.cs
+[Theory]
+[CustomizedAutoData]
+public async Task LoginShouldSetProperHttpOnlyCookie(Register register)
+{
+    // Arrange
+    await _authHelper.Register(register);
+
+    var loginCommand = new Login
+    {
+        Email = register.Email,
+        Password = register.Password
+    };
+
+    // Act
+    var response = await _fixture.ExecuteHttpClientAsync(client =>
+        client.PostAsJsonAsync(AuthRoute("login"), loginCommand));
+
+    // Assert
+    var token = (await response
+            .ShouldDeserializeTo<LoginResource>())
+        .TokenString;
+
+    response.Headers.ShouldContain(header =>
+        header.Key == "Set-Cookie" &&
+        header.Value.Any(x => x.Contains(AuthConstants.Cookies.AuthCookieName) && x.Contains(token)));
+}
+```
+7. Real-time communications through SignalR
+8. AutoMapper
+9. EntityFramework Core with PostgreSQL Server and ASP.NET Identity
+10. JWT authentication/authorization
+11. File logging with Serilog
+12. Stylecop
+13. Swagger UI + Fully Documented Controllers
+14. Global Model Errors Handler
+15. Global Environment-Dependent Exception Handler
+16. Thin Controllers
+17. Neat folder structure
+```
+├───server
+│   ├───configuration
+│   │   ├───analyzers.ruleset
+│   │   └───stylecop.json
+│   ├───src
+│   │   ├───Jbet.Api
+│   │   ├───Jbet.Business
+│   │   ├───Jbet.Core
+│   │   ├───Jbet.Domain
+│   │   └───Jbet.Persistence
+│   └───tests
+        └───Jbet.Tests
+```
