@@ -30,6 +30,7 @@ public Task<Option<JwtView, Error>> Handle(Login command, CancellationToken canc
 ```
 5. Event-sourcing
 6. A complete integration tests suite
+
 Examples:
 ```csharp
 // AuthControllerTests.cs
@@ -70,7 +71,8 @@ public async Task LoginShouldSetProperHttpOnlyCookie(Register register)
 14. Global Model Errors Handler
 15. Global Environment-Dependent Exception Handler
 16. Thin Controllers
-17. Neat folder structure
+17. [FluentValidation](https://fluentvalidation.net/)
+18. Neat folder structure
 ```
 ├───server
 │   ├───configuration
