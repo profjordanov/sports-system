@@ -1,6 +1,6 @@
 # JBet
 Web based sport system to bet for matches, played by teams.
-As a whole, this project aims to 
+As a whole, this project aims to implement most of the [AspNetCore-Developer-Roadmap](https://github.com/MoienTajik/AspNetCore-Developer-Roadmap)
 
 ## Data Model
 ### The system holds teams, players, matches, comments, users, bets and votes.
