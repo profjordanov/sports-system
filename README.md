@@ -1,4 +1,5 @@
 # JBet
-Web based sport system to bet for matches. It features DDD with CQRS and event-sourcing, Hateoas, functional programming, TDD, Docker and much more. 
+Web based sport system to bet for matches, played by teams.
 
-
+## Data Model
+### The system holds teams, players, matches, comments, users, bets and votes.
