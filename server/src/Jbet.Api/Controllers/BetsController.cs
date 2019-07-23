@@ -28,7 +28,7 @@ namespace Jbet.Api.Controllers
         /// </summary>
         /// <param name="input">HTTP request.</param>
         [HttpPost("away-team", Name = nameof(BetForAwayTeam))]
-        [ProducesResponseType(typeof(Unit), (int)HttpStatusCode.Created)]
+        [ProducesResponseType(typeof(UserMatchBetResource), (int)HttpStatusCode.Created)]
         public async Task<IActionResult> BetForAwayTeam([FromBody] MatchAwayBetInput input) =>
             (await Mediator.Send(new UserBetForAwayTeam(input, CurrentUserId))
                 .MapAsync(_ => ToEmptyResourceAsync<UserMatchBetResource>()))
