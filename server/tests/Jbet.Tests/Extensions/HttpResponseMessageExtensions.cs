@@ -29,7 +29,9 @@ namespace Jbet.Tests.Extensions
             var resource = await response.ShouldDeserializeTo<TResource>();
 
             if (expectedLinks != null)
+            {
                 resource.Links.ShouldAllBe(l => expectedLinks.Contains(l.Key));
+            }
 
             return resource;
         }
