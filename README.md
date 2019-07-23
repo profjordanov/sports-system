@@ -28,7 +28,7 @@ public Task<Option<JwtView, Error>> Handle(Login command, CancellationToken canc
     GetExtraClaims(user).MapAsync(async claims =>
     GenerateJwt(user, claims)))));
 ```
-5. Event-sourcing
+5. Event-sourcing via [Marten](https://jasperfx.github.io/marten/)
 6. A complete integration tests suite
 
 Examples:
