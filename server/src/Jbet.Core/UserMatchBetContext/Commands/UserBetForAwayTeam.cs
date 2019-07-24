@@ -6,6 +6,10 @@ namespace Jbet.Core.UserMatchBetContext.Commands
 {
     public class UserBetForAwayTeam : MatchAwayBetInput, ICommand
     {
+        public UserBetForAwayTeam()
+        {
+        }
+
         public UserBetForAwayTeam(MatchAwayBetInput input, Guid userId)
         {
             MatchId = input.MatchId;

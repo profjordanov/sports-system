@@ -9,6 +9,7 @@ using Jbet.Api.Hateoas.Resources.Bet;
 using Jbet.Core.UserMatchBetContext.HttpRequests;
 using Jbet.Domain.Entities;
 using Jbet.Tests.Business.AuthContext;
+using Jbet.Tests.Business.MatchContext.Helpers;
 using Jbet.Tests.Business.TeamContext.Helpers;
 using Jbet.Tests.Customizations;
 using Jbet.Tests.Extensions;
@@ -20,13 +21,13 @@ namespace Jbet.Tests.Api.Controllers
     {
         private readonly AppFixture _fixture;
         private readonly ApiTestsHelper _apiHelper;
-        private readonly TeamTestsHelper _teamTestsHelper;
+        private readonly MatchTestHelper _matchTestHelper;
 
         public BetsControllerTests()
         {
             _fixture = new AppFixture();
             _apiHelper = new ApiTestsHelper(_fixture);
-            _teamTestsHelper = new TeamTestsHelper(_fixture);
+            _matchTestHelper = new MatchTestHelper(_fixture);
         }
 
         [Theory]
@@ -39,7 +40,8 @@ namespace Jbet.Tests.Api.Controllers
                 async client =>
                 {
                     // Arrange
-                    var currentMatch = await RegistrateMatchAsync(fixture, homeTeam, awayTeam);
+                    var currentMatch = await _matchTestHelper
+                        .RegistrateMatchAsync(fixture, homeTeam, awayTeam);
 
                     var httpRequest = new MatchAwayBetInput
                     {
@@ -70,7 +72,7 @@ namespace Jbet.Tests.Api.Controllers
                 async client =>
                 {
                     // Arrange
-                    var currentMatch = await RegistrateMatchAsync(fixture, homeTeam, awayTeam);
+                    var currentMatch = await _matchTestHelper.RegistrateMatchAsync(fixture, homeTeam, awayTeam);
 
                     var httpRequest = new MatchHomeBetInput
                     {
@@ -90,30 +92,5 @@ namespace Jbet.Tests.Api.Controllers
                     await response.ShouldBeAResource<UserMatchBetResource>(expectedLinks);
 
                 }, fixture);
-
-        private async Task<Match> RegistrateMatchAsync(
-            ISpecimenBuilder fixture,
-            Team homeTeam,
-            Team awayTeam)
-        {
-            var team1 = await _teamTestsHelper.AddAsync(homeTeam);
-            var team2 = await _teamTestsHelper.AddAsync(awayTeam);
-
-            var currentMatch = new Match
-            {
-                Id = Guid.NewGuid(),
-                AwayTeamId = team2.Id,
-                HomeTeamId = team1.Id,
-                Start = fixture.Create<DateTime>(),
-            };
-
-            await _fixture.ExecuteDbContextAsync(async dbContext =>
-            {
-                await dbContext.Matches.AddAsync(currentMatch);
-                await dbContext.SaveChangesAsync();
-            });
-
-            return currentMatch;
-        }
     }
 }
