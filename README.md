@@ -109,7 +109,7 @@ public async Task<IActionResult> BetForHomeTeam([FromBody] MatchHomeBetInput inp
 │   │   ├───Jbet.Domain
 │   │   └───Jbet.Persistence
 │   └───tests
-        └───Jbet.Tests
+│       └───Jbet.Tests
 ```
 19. Arrange Act Assert Pattern
 20. xUnit
