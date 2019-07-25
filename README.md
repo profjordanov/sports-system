@@ -68,9 +68,13 @@ public async Task LoginShouldSetProperHttpOnlyCookie(Register register)
 11. File logging with Serilog
 12. Stylecop
 13. Swagger UI + Fully Documented Controllers
+
 ![swagger-ui](https://devadventures.net/wp-content/uploads/2018/06/swagger-ui-new.png)
+
 14. Global Model Errors Handler
+
 ![model-errors](https://devadventures.net/wp-content/uploads/2018/05/model-errors.png)
+
 15. Global Environment-Dependent Exception Handler
 16. Thin Controllers
 
