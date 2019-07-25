@@ -71,6 +71,21 @@ public async Task LoginShouldSetProperHttpOnlyCookie(Register register)
 14. Global Model Errors Handler
 15. Global Environment-Dependent Exception Handler
 16. Thin Controllers
+
+Examples:
+```csharp
+// BetsController.cs
+/// <summary>
+/// Logged-in users can bet for the home team.
+/// </summary>
+/// <param name="input">HTTP request.</param>
+[HttpPost("home-team", Name = nameof(BetForHomeTeam))]
+[ProducesResponseType(typeof(UserMatchBetResource), (int)HttpStatusCode.Created)]
+public async Task<IActionResult> BetForHomeTeam([FromBody] MatchHomeBetInput input) =>
+    (await Mediator.Send(new UserBetForHomeTeam(input, CurrentUserId))
+        .MapAsync(_ => ToEmptyResourceAsync<UserMatchBetResource>()))
+        .Match(resource => CreatedAtAction(nameof(BetForHomeTeam), resource), Error);
+```
 17. [FluentValidation](https://fluentvalidation.net/)
 18. Neat folder structure
 ```
