@@ -87,3 +87,8 @@ public async Task LoginShouldSetProperHttpOnlyCookie(Register register)
 │   └───tests
         └───Jbet.Tests
 ```
+19. Arrange Act Assert Pattern
+20. xUnit
+21. Autofixture
+22. Moq
+23. Shouldly
