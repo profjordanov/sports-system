@@ -119,3 +119,5 @@ public async Task<IActionResult> BetForHomeTeam([FromBody] MatchHomeBetInput inp
 23. Shouldly
 24. FakeItEasy
 25. Respawn
+
+# Functionality
