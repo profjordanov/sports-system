@@ -121,3 +121,4 @@ public async Task<IActionResult> BetForHomeTeam([FromBody] MatchHomeBetInput inp
 25. Respawn
 
 # Functionality
+- [x] Anonymous users can register user account by email and password.
