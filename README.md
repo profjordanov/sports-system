@@ -122,3 +122,5 @@ public async Task<IActionResult> BetForHomeTeam([FromBody] MatchHomeBetInput inp
 
 # Functionality
 - [x] Anonymous users can register user account by email and password.
+- [x] Anonymous users can login by email and password.
+- [x] Logged-in users can logout.
