@@ -124,3 +124,4 @@ public async Task<IActionResult> BetForHomeTeam([FromBody] MatchHomeBetInput inp
 - [x] Anonymous users can register user account by email and password.
 - [x] Anonymous users can login by email and password.
 - [x] Logged-in users can logout.
+- [x] Anonymous users can view the home page, holding the top 3 matches (having most bets) and best 3 teams (most voted).
