@@ -2,6 +2,9 @@ language: generic
 
 services:
   - docker
+  
+before_install:
+  - chmod +x run-app.sh
 
 script:
   - ./run-app.sh
