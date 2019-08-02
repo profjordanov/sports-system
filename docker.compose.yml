@@ -1,0 +1,33 @@
+version: "3.4"
+
+services:
+  jbet.sql:
+    image: postgres:9.5
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+  jbet.eventstore:
+    image: postgres:9.5
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+  jbet.api:
+    image: jbetapi
+    build:
+      context: ./server
+      dockerfile: ./src/Jbet.Api/Dockerfile
+      args:
+        DOTNET_BUILD_CONFIGURATION: Debug
+        ASPNETCORE_ENVIRONMENT: Development
+    ports:
+      - "5000:80"
+      - "5100:443"
+    environment:
+      ASPNETCORE_HTTPS_PORT: 5100
+      ASPNETCORE_URLS: https://+;http://+
+    depends_on:
+      - jbet.sql
+      - jbet.eventstore
+    links:
+      - jbet.sql:relationaldb
+      - jbet.eventstore:eventstore
