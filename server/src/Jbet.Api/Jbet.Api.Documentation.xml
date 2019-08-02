@@ -104,14 +104,15 @@
             <summary>
             Display the matches, ordered by date with paging.
             </summary>
-            <param name="query"></param>
-            <returns>A collection of <see cref="T:Jbet.Domain.Views.Match.MatchView"/></returns>
+            <param name="query">Query model to read data.</param>
+            <returns>A collection of <see cref="T:Jbet.Api.Hateoas.Resources.Match.MatchResource"/>.</returns>
             <response code="200"></response>
         </member>
         <member name="M:Jbet.Api.Controllers.MatchesController.MatchDetails(System.Guid)">
             <summary>
             Logged-in users can view match details (home team, away team, date and comments).
             </summary>
+            <returns>A <see cref="T:Jbet.Api.Hateoas.Resources.Match.MatchDetailsResource"/>.</returns>
             <response code="200">The match was found.</response>
             <response code="404">The match was not found.</response>
         </member>

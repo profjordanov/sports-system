@@ -1,11 +1,12 @@
-﻿using Jbet.Api.Hateoas.Resources.Base;
+﻿// <copyright file="MatchesController.cs" company="jjSoft Solutions LTD">
+// Copyright (c) jjSoft Solutions LTD. All rights reserved.
+// </copyright>
+
+using Jbet.Api.Hateoas.Resources.Base;
 using Jbet.Api.Hateoas.Resources.Match;
-using Jbet.Api.Hateoas.Resources.Team;
 using Jbet.Core.MatchContext.Queries;
-using Jbet.Core.TeamContext.Queries;
 using Jbet.Domain;
 using Jbet.Domain.Views.Match;
-using Jbet.Domain.Views.Team;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -32,8 +33,8 @@ namespace Jbet.Api.Controllers
         /// <summary>
         /// Display the matches, ordered by date with paging.
         /// </summary>
-        /// <param name="query"></param>
-        /// <returns>A collection of <see cref="MatchView"/></returns>
+        /// <param name="query">Query model to read data.</param>
+        /// <returns>A collection of <see cref="MatchResource"/>.</returns>
         /// <response code="200"></response>
         [AllowAnonymous]
         [HttpGet("index", Name = nameof(Index))]
@@ -44,6 +45,7 @@ namespace Jbet.Api.Controllers
         /// <summary>
         /// Logged-in users can view match details (home team, away team, date and comments).
         /// </summary>
+        /// <returns>A <see cref="MatchDetailsResource"/>.</returns>
         /// <response code="200">The match was found.</response>
         /// <response code="404">The match was not found.</response>
         [HttpGet("{id}", Name = nameof(MatchDetails))]
