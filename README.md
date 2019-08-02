@@ -1,4 +1,7 @@
 # JBet
+
+![Build status](https://ci.appveyor.com/api/projects/status/5xu73ew2on693vhe?svg=true)](https://ci.appveyor.com/project/profjordanov/sports-system)
+
 Web based sport system to bet for matches, played by teams.
 As a whole, this project aims to implement most of the [AspNetCore-Developer-Roadmap](https://github.com/MoienTajik/AspNetCore-Developer-Roadmap)
 
