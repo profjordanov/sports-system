@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Threading.Tasks;
-using AutoFixture;
+﻿using AutoFixture;
 using AutoFixture.Kernel;
 using Jbet.Api.Hateoas;
 using Jbet.Api.Hateoas.Resources.Bet;
@@ -13,6 +9,10 @@ using Jbet.Tests.Business.MatchContext.Helpers;
 using Jbet.Tests.Business.TeamContext.Helpers;
 using Jbet.Tests.Customizations;
 using Jbet.Tests.Extensions;
+using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace Jbet.Tests.Api.Controllers

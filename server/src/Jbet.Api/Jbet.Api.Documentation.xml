@@ -16,9 +16,6 @@
             A controller responsible for users and JWT token. 
             </summary>
         </member>
-        <member name="M:Jbet.Api.Controllers.AuthController.#ctor(MediatR.IMediator,Jbet.Api.Hateoas.Resources.Base.IResourceMapper)">
-            <inheritdoc />
-        </member>
         <member name="M:Jbet.Api.Controllers.AuthController.GetCurrentUser">
             <summary>
             Retrieves the currently logged in user.
@@ -82,9 +79,6 @@
             <summary>
             A controller responsible for the home page of the application.
             </summary>
-        </member>
-        <member name="M:Jbet.Api.Controllers.HomeController.#ctor(MediatR.IMediator,Jbet.Api.Hateoas.Resources.Base.IResourceMapper)">
-            <inheritdoc />
         </member>
         <member name="M:Jbet.Api.Controllers.HomeController.ApiHome">
             <summary>

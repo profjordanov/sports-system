@@ -24,7 +24,6 @@ namespace Jbet.Api.Controllers
     /// </summary>
     public class AuthController : ApiController
     {
-        /// <inheritdoc />
         public AuthController(IMediator mediator, IResourceMapper resourceMapper) 
             : base(mediator, resourceMapper)
         {
@@ -75,7 +74,7 @@ namespace Jbet.Api.Controllers
                 Error);
 
         /// <summary>
-        /// Logout. (unsets the auth cookie)
+        /// Logout. (unset the auth cookie)
         /// </summary>
         [Authorize]
         [HttpDelete("logout", Name = nameof(Logout))]

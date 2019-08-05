@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Jbet.Core.AuthContext.Commands;
+﻿using Jbet.Core.AuthContext.Commands;
 using Jbet.Core.VoteContext.Commands;
 using Jbet.Domain.Entities;
 using Jbet.Domain.Events.Votes;
 using Jbet.Tests.Business.AuthContext;
 using Jbet.Tests.Customizations;
 using Moq;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace Jbet.Tests.Api.Hubs
