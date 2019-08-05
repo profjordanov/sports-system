@@ -41,7 +41,7 @@
         </member>
         <member name="M:Jbet.Api.Controllers.AuthController.Logout">
             <summary>
-            Logout. (unsets the auth cookie)
+            Logout. (unset the auth cookie)
             </summary>
         </member>
         <member name="T:Jbet.Api.Controllers.BetsController">
