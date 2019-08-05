@@ -1,9 +1,9 @@
-﻿using System;
-using System.Threading.Tasks;
-using AutoFixture;
+﻿using AutoFixture;
 using AutoFixture.Kernel;
 using Jbet.Domain.Entities;
 using Jbet.Tests.Business.TeamContext.Helpers;
+using System;
+using System.Threading.Tasks;
 
 namespace Jbet.Tests.Business.MatchContext.Helpers
 {

@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Jbet.Core\Jbet.Core.csproj" />
     <ProjectReference Include="..\Jbet.Domain\Jbet.Domain.csproj" />
   </ItemGroup>
 

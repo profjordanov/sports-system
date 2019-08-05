@@ -1,6 +1,4 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using AutoFixture;
+﻿using AutoFixture;
 using AutoFixture.Kernel;
 using Jbet.Core.AuthContext.Commands;
 using Jbet.Core.UserMatchBetContext.Commands;
@@ -9,6 +7,8 @@ using Jbet.Tests.Business.AuthContext;
 using Jbet.Tests.Business.MatchContext.Helpers;
 using Jbet.Tests.Customizations;
 using Shouldly;
+using System.Linq;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace Jbet.Tests.Business.UserMatchBetContext
