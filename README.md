@@ -19,7 +19,7 @@ As a whole, this project aims to implement most of the [AspNetCore-Developer-Roa
 
 ## Features
 1. Domain-Driven Design in Practice a.k.a [DDD](https://en.wikipedia.org/wiki/Domain-driven_design)
-2. REST with [HATEOAS](https://github.com/riskfirst/riskfirst.hateoas)
+2. REST with [HATEOAS](https://github.com/riskfirst/riskfirst.hateoas) by following [HAL](http://stateless.co/hal_specification.html)
 3. Command and Query Responsibility Segregation (CQRS) via [MediatR](https://github.com/jbogard/MediatR)
 4. Functional style command/query handlers via robust option/maybe type [Optional](https://github.com/nlkl/Optional)
 
