@@ -1,4 +1,8 @@
-﻿using Jbet.Api.Hateoas.Resources.Base;
+﻿// <copyright file="HomeController.cs" company="jjSoft Solutions LTD">
+// Copyright (c) jjSoft Solutions LTD. All rights reserved.
+// </copyright>
+
+using Jbet.Api.Hateoas.Resources.Base;
 using Jbet.Api.Hateoas.Resources.Home;
 using Jbet.Core.HomeContext.Queries;
 using Jbet.Domain.Views.Home;
@@ -17,7 +21,6 @@ namespace Jbet.Api.Controllers
     [AllowAnonymous]
     public class HomeController : ApiController
     {
-        /// <inheritdoc />
         public HomeController(
             IMediator mediator,
             IResourceMapper resourceMapper)

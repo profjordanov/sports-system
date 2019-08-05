@@ -1,4 +1,8 @@
-﻿using Jbet.Api.Hateoas.Resources.Base;
+﻿// <copyright file="CommentsController.cs" company="jjSoft Solutions LTD">
+// Copyright (c) jjSoft Solutions LTD. All rights reserved.
+// </copyright>
+
+using Jbet.Api.Hateoas.Resources.Base;
 using Jbet.Api.Hateoas.Resources.Comment;
 using Jbet.Core.CommentContext.Commands;
 using Jbet.Core.CommentContext.HttpRequests;

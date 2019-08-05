@@ -1,4 +1,8 @@
-﻿using Jbet.Api.Hateoas.Resources.Auth;
+﻿// <copyright file="AuthController.cs" company="jjSoft Solutions LTD">
+// Copyright (c) jjSoft Solutions LTD. All rights reserved.
+// </copyright>
+
+using Jbet.Api.Hateoas.Resources.Auth;
 using Jbet.Api.Hateoas.Resources.Base;
 using Jbet.Core.AuthContext;
 using Jbet.Core.AuthContext.Commands;
