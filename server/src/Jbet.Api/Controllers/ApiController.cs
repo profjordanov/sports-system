@@ -1,4 +1,8 @@
-﻿using Jbet.Api.Hateoas.Resources.Base;
+﻿// <copyright file="ApiController.cs" company="jjSoft Solutions LTD">
+// Copyright (c) jjSoft Solutions LTD. All rights reserved.
+// </copyright>
+
+using Jbet.Api.Hateoas.Resources.Base;
 using Jbet.Core.Base;
 using Jbet.Domain;
 using MediatR;

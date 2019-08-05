@@ -1,4 +1,8 @@
-﻿using Jbet.Api.Hateoas.Resources.Base;
+﻿// <copyright file="VotesController.cs" company="jjSoft Solutions LTD">
+// Copyright (c) jjSoft Solutions LTD. All rights reserved.
+// </copyright>
+
+using Jbet.Api.Hateoas.Resources.Base;
 using Jbet.Api.Hateoas.Resources.Vote;
 using Jbet.Core.VoteContext.Commands;
 using Jbet.Core.VoteContext.HttpRequests;

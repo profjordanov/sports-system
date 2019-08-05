@@ -1,4 +1,8 @@
-﻿using Jbet.Api.Hateoas.Resources.Base;
+﻿// <copyright file="TeamsController.cs" company="jjSoft Solutions LTD">
+// Copyright (c) jjSoft Solutions LTD. All rights reserved.
+// </copyright>
+
+using Jbet.Api.Hateoas.Resources.Base;
 using Jbet.Api.Hateoas.Resources.Team;
 using Jbet.Core.TeamContext.Queries;
 using Jbet.Domain;
