@@ -101,6 +101,15 @@ public async Task<IActionResult> BetForHomeTeam([FromBody] MatchHomeBetInput inp
 17. [FluentValidation](https://fluentvalidation.net/)
 18. Neat folder structure
 ```
+├───client
+│   ├───public
+│   │   ├───index.html
+│   │   └───manifest.json
+│   ├───src
+│   │   ├───api
+│   │   ├───components
+│   │   ├───redux
+│   │   └───utils
 ├───server
 │   ├───configuration
 │   │   ├───analyzers.ruleset
