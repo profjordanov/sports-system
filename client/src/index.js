@@ -9,6 +9,7 @@ import "./index.css";
 import history from "./history";
 
 const store = configureStore();
+store.subscribe(() => console.log(store.getState()));
 
 render(
     <ReduxProvider store={store}>
