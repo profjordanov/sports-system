@@ -1,11 +1,10 @@
-import React  from 'react';
+import React from "react";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 const Header = ({ isLoggedIn, currentUser }) => {
     const activeStyle = { color: "#000000" };
-    console.log("Is logged" + isLoggedIn);
 
     return (
         <>

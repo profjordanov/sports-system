@@ -17,6 +17,7 @@ export function login(credentials) {
         return authApi
             .login(credentials)
             .then(token => {
+                console.log(token.tokenString);
                 localStorage.setItem("access_token", token.tokenString);
             })
             .catch(error => {
