@@ -1,0 +1,26 @@
+version: "3.4"
+
+services:
+  jbet.tests.sql:
+    image: postgres:9.5
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+  jbet.tests.eventstore:
+    image: postgres:9.5
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+  jbet.tests:
+    image: jbettests
+    build:
+      context: ./server
+      dockerfile: ./tests/Jbet.Tests/Dockerfile
+    depends_on:
+      - jbet.tests.sql
+      - jbet.tests.eventstore
+    links:
+      - jbet.tests.sql:relationaldb
+      - jbet.tests.eventstore:eventstore
+    volumes:
+      - ./:/coverage
