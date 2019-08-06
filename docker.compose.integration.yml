@@ -1,16 +1,32 @@
 version: "3.4"
 
+networks:
+  jbettest-network:
+    driver: bridge
+
 services:
   jbet.tests.sql:
     image: postgres:9.5
+    ports: 
+      - "5432"
     restart: always
     environment:
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_DB: "jbet-relational"
+    networks:
+      - jbettest-network
   jbet.tests.eventstore:
     image: postgres:9.5
+    ports: 
+      - "5432"
     restart: always
     environment:
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_DB: "jbet-event-store"
+    networks:
+      - jbettest-network
   jbet.tests:
     image: jbettests
     build:
@@ -24,3 +40,6 @@ services:
       - jbet.tests.eventstore:eventstore
     volumes:
       - ./:/coverage
+    networks:
+      - jbettest-network
+      
