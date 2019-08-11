@@ -2,6 +2,8 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/5xu73ew2on693vhe?svg=true)](https://ci.appveyor.com/project/profjordanov/sports-system)
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2e0461ba54e148bea7bb3b5a81e76924)](https://www.codacy.com/app/profjordanov/sports-system?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=profjordanov/sports-system&amp;utm_campaign=Badge_Grade)
+
 Web based sport system to bet for matches, played by teams.
 As a whole, this project aims to implement most of the [AspNetCore-Developer-Roadmap](https://github.com/MoienTajik/AspNetCore-Developer-Roadmap)
 
