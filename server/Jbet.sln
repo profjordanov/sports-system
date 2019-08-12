@@ -19,8 +19,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{71CE861B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jbet.Tests", "tests\Jbet.Tests\Jbet.Tests.csproj", "{E6490AD7-B34E-4738-822D-1B547D57477B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jbet.Sandbox", "tests\Jbet.Sandbox\Jbet.Sandbox.csproj", "{5EAD8527-AEB6-441A-A7A7-9CE20126BFDE}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,10 +49,6 @@ Global
 		{E6490AD7-B34E-4738-822D-1B547D57477B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6490AD7-B34E-4738-822D-1B547D57477B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6490AD7-B34E-4738-822D-1B547D57477B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5EAD8527-AEB6-441A-A7A7-9CE20126BFDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5EAD8527-AEB6-441A-A7A7-9CE20126BFDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5EAD8527-AEB6-441A-A7A7-9CE20126BFDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5EAD8527-AEB6-441A-A7A7-9CE20126BFDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,7 +60,6 @@ Global
 		{597C9044-F221-4655-88D3-85C526397DD9} = {2523645C-9DDF-46FA-BDA2-586E5510BE2C}
 		{0259EEDC-F5D6-413B-BA08-98862EEAB778} = {2523645C-9DDF-46FA-BDA2-586E5510BE2C}
 		{E6490AD7-B34E-4738-822D-1B547D57477B} = {71CE861B-38DF-4B57-B762-FB8FDAFC4C4E}
-		{5EAD8527-AEB6-441A-A7A7-9CE20126BFDE} = {71CE861B-38DF-4B57-B762-FB8FDAFC4C4E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9561C21E-7212-45C8-8088-99B1984F4F94}
