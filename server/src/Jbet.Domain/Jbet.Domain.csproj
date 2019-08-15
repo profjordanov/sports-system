@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Jordan Jordanov</Authors>
+    <Company>jjSoft Solutions LTD</Company>
+    <Description>Defines a set of common objects like entities, events, views, errors.</Description>
     <CodeAnalysisRuleSet>..\..\configuration\analyzers.ruleset</CodeAnalysisRuleSet>
     <LangVersion>7.3</LangVersion>
   </PropertyGroup>
