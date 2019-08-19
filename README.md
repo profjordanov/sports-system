@@ -142,3 +142,4 @@ public async Task<IActionResult> BetForHomeTeam([FromBody] MatchHomeBetInput inp
 - [x] Anonymous users can view all matches (ordered by date, with paging).
 - [x] Logged-in users can view team details (information about the team and its players).
 - [x] Logged-in users can vote for a team (no more than once).
+- [x] Logged-in users can view match details (home team, away team, date and comments).
