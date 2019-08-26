@@ -146,4 +146,3 @@ public async Task<IActionResult> BetForHomeTeam([FromBody] MatchHomeBetInput inp
 - [x] Logged-in users can add comments for given match.
 - [x] Logged-in users can bet for the home or away team.
 - [x] Logged-in users can create a new team and assign players to the new team.
-
