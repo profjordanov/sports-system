@@ -1,4 +1,5 @@
 # JBet
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 [![Build status](https://ci.appveyor.com/api/projects/status/5xu73ew2on693vhe?svg=true)](https://ci.appveyor.com/project/profjordanov/sports-system)
 
